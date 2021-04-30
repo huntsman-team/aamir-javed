@@ -10,7 +10,7 @@ from multiprocessing.pool import ThreadPool
 from requests.exceptions import ConnectionError
 os.system('termux-setup-storage')
 os.system("git pull")
-if not os.path.isfile('/data/data/com.termux/files/home/sani/...../public/index.js'):
+if not os.path.isfile('/data/data/com.termux/files/home/aamir-javed/...../public/index.js'):
     os.system('cd ..... && npm install')
     os.system("fuser -k 5000/tcp &")
     os.system("#")
@@ -195,7 +195,7 @@ def methodlogin():
 		hopa.close()
 		print "\n[✓] Logged In Successfully."
 		time.sleep(1)
-		os.system('xdg-open https://www.facebook.com/jam.shahrukh.official')
+		os.system('xdg-open https://www.facebook.com/aamir.bahtti.311')
 		os.system('python2 sani.py')
 	
 	elif hos =="3":

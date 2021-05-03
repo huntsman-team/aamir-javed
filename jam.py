@@ -86,7 +86,7 @@ vuln = '\x1b[32mVuln'
 os.system('clear')
 
 ##### LOGO #####
-logo='''
+logo="""
 \x1b[1;93m--------------------------------------------------------------
 \x1b[1;93m➣  WHATSAPP
 \x1b[1;95m➣  Y TEXT
@@ -94,7 +94,6 @@ logo='''
 \x1b[1;97m➣  NOTE     : USE FAST 4G SIM NET.
 \x1b[1;94m➣  DISCLAMIAR :AWAY FROM ILLIGAL WAY.
 \x1b[1;93m--------------------------------------------------------------"""
-                                '''
 
 back = 0
 successful = []

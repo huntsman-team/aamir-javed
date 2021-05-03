@@ -107,7 +107,7 @@ def menu():
 	print "\033[1;92mWELCOME TO ALL "
 	print
         
-	print "\033[1;92m[1
+	print "\033[1;92m[1]  JAZZ"
 	print "\033[1;92m[2]  TELINOR"
 	print "\033[1;92m[3]  WARID"
 	print "\033[1;92m[4]  UFONE"

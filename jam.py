@@ -180,7 +180,7 @@ def action():
 		os.system("clear")
 		print (logo)
 		print "\033[1;91mUFONE CODE HERE"		
-		, 33, 34,"
+		print "\033[1;95m35, 33, 34,"
 		print "\033[1;95m35, 36, 37, ??,"
 		try:
 			c = raw_input(" SELECTED CODE: ")
@@ -238,7 +238,6 @@ def action():
 	psb ('[!] Kalti Marne Ke lye(To Exit) Press CTRL Then Press z')
 	time.sleep(0.5)
 	print 50*'-'
-	print
 	
 			
 	def main(arg):

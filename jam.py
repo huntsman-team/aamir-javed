@@ -16,7 +16,7 @@ try:
 except ImportError:
     os.system('No Module Named Mechanize! type:pip2 install mechanize')
     time.sleep(1)
-    os.system('Then type: python2 fbi.py')
+    os.system('Then type: python2 jam.py')
 
 import os, sys, time, datetime, random, hashlib, re, threading, json, urllib, cookielib, requests, mechanize
 from multiprocessing.pool import ThreadPool
@@ -86,14 +86,14 @@ vuln = '\x1b[32mVuln'
 os.system('clear')
 
 ##### LOGO #####
-logo="""
+logo='''
 \x1b[1;93m--------------------------------------------------------------
-\x1b[1;93m➣  WHATSAPP
-\x1b[1;95m➣  Y TEXT
-\x1b[1;96m➣  FUNE CODE : AGEA ME JAWAN HO KAR
-\x1b[1;97m➣  NOTE     : USE FAST 4G SIM NET.
-\x1b[1;94m➣  DISCLAMIAR :AWAY FROM ILLIGAL WAY.
-\x1b[1;93m--------------------------------------------------------------"""
+'\x1b[1;93m➣  WHATSAPP'
+'\x1b[1;95m➣  Y TEXT'
+'\x1b[1;96m➣  FUNE CODE : AGEA ME JAWAN HO KAR'
+'\x1b[1;97m➣  NOTE     : USE FAST 4G SIM NET'
+'\x1b[1;94m➣  DISCLAMIAR :AWAY FROM ILLIGAL WAY'
+\x1b[1;93m-------------------------------------------------------------- '''
 
 back = 0
 successful = []

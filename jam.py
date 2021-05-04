@@ -225,13 +225,11 @@ def action():
 		action()
  
 	xxx = str(len(id))
-	psb ("\033[92m TOTAL NUMBER: " + xxx)
+	psb ("\033[1;92m TOTAL NUMBER: " + xxx)
 	time.sleep(0.5)
-	psb ("\033[92m CRACK RUNNING...")
+	psb ("\033[1;92m CRACK RUNNING...")
 	time.sleep(0.5)
-	nd ...')
-	time.sleep(0.5)
-	psb ("[!] Kalti Marne Ke lye(To Exit) Press CTRL Then Press z")
+	psb ("\033[1;92m[!] Kalti Marne Ke lye(To Exit) Press CTRL Then Press z")
 	time.sleep(0.5)
 	print 50*'-'
 	

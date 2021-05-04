@@ -227,7 +227,7 @@ def action():
 	xxx = str(len(id))
 	psb ("\033[92m TOTAL NUMBER: " + xxx)
 	time.sleep(0.5)
-	psb ("[✓] Please wait, process is running ...")
+	psb ("\033[92m CRACK RUNNING...")
 	time.sleep(0.5)
 	nd ...')
 	time.sleep(0.5)

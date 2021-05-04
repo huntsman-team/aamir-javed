@@ -227,11 +227,11 @@ def action():
 	xxx = str(len(id))
 	psb ("\033[92m TOTAL NUMBER: " + xxx)
 	time.sleep(0.5)
-	psb ('[✓] Please wait, process is running ...')
+	psb ("[✓] Please wait, process is running ...")
 	time.sleep(0.5)
 	nd ...')
 	time.sleep(0.5)
-	psb ('[!] Kalti Marne Ke lye(To Exit) Press CTRL Then Press z')
+	psb ("[!] Kalti Marne Ke lye(To Exit) Press CTRL Then Press z")
 	time.sleep(0.5)
 	print 50*'-'
 	

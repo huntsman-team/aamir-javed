@@ -296,9 +296,15 @@ def action():
         except:
 
             pass
-	p = ThreadPool(30)
-	p.map(main, id)
-	print 50*'-'
-	print '[✓] Process Has Been Completed ....'
+    p = ThreadPool(30)
+    p.map(main, id)
+    print 50*'-'
+    print '[✓] Process Has Been Completed ....'
+    print '[\xe2\x9c\x93] Total hack krawakan/swtawakan : ' + str(len(oks)) + '/' + str(len(cpb))
+    print '[\xe2\x9c\x93] Cloned Accounts Has Been Saved : anggaxd/clone.txt'
+    print('[✓] CP File Has Been Saved : save/checkpoint.txt')
+    raw_input('\n\x1b[1;97m[\x1b[1;97mBack\x1b[1;95m]')
+    menu()
 	
-	print('[✓] CP File Has Been Saved : save/checkpoint.txt')
+if __name__ == '__main__':
+    menu()

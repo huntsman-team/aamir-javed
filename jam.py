@@ -293,8 +293,8 @@ def action():
 									cps.close()
 									cpb.append(c+user+pass3)
 								
-							
-		
+        except:
+            pass
 	p = ThreadPool(30)
 	p.map(main, id)
 	print 50*'-'

@@ -225,7 +225,7 @@ def action():
 		action()
  
 	xxx = str(len(id))
-	psb ('[✓] Total Numbers: '+xxx)
+	psb ('[✓] Total Numbers ' + xxx)
 	time.sleep(0.5)
 	psb ('[✓] Please wait, process is running ...')
 	time.sleep(0.5)

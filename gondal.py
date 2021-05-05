@@ -400,7 +400,6 @@ def a_s():
         p1 = raw_input(' \033[1;92m[1]Name + digit: ')
         p2 = raw_input(' \033[1;92m[2]Name + digit: ')
         p3 = raw_input(' \033[1;92m[3]Name + digit: ')
-	p3 = raw_input(' \033[1;92m[3]Name + digit: ')
         idt = raw_input(' \033[1;93m[★]Enter id: ')
         
         try:
@@ -439,7 +438,6 @@ def a_s():
         p1 = raw_input(' \033[1;92m[1]Name + digit: ')
         p2 = raw_input(' \033[1;92m[2]Name + digit: ')
         p3 = raw_input(' \033[1;92m[3]Name + digit: ')
-	p3 = raw_input(' \033[1;92m[3]Name + digit: ')
         idt = raw_input(' \033[1;93m[★]Enter id: ')
         
         try:
@@ -472,7 +470,6 @@ def a_s():
         p1 = raw_input(' \033[1;92m[1]Name + digit: ')
         p2 = raw_input(' \033[1;92m[2]Name + digit: ')
         p3 = raw_input(' \033[1;92m[3]Name + digit: ')
-	p3 = raw_input(' \033[1;92m[3]Name + digit: ')
         try:
 	    uidlist = raw_input('[+] File Name: ')
 	    print 47 * '-'
@@ -642,7 +639,7 @@ def c_s():
         print ''
         pass1 = raw_input(' \033[1;92m[1]Password: ')
         pass2 = raw_input(' \033[1;92m[2]Password: ')
-	      pass3 = raw_input(' \033[1;92m[3]Password: ')
+	pass3 = raw_input(' \033[1;92m[3]Password: ')
         idt = raw_input(' \033[1;93mEnter id: ')
         
         try:
@@ -675,7 +672,7 @@ def c_s():
         print logo
         pass1 = raw_input(' \033[1;92m[1]Password: ')
         pass2 = raw_input(' \033[1;92m[2]Password: ')
-	      pass3 = raw_input(' \033[1;92m[3]Password: ')
+	pass3 = raw_input(' \033[1;92m[3]Password: ')
         try:
 	    uidlist = raw_input('[+] File Name: ')
 	    print 47 * '-'

@@ -298,7 +298,7 @@ def ex_id():
     for i in q['data']:
         idg.append(i['id'] + i['name'])
         bz.write(i['id']+' | '+i['name']+ '\n')
-        print ('\r["+str(len(idg))+'] => '+i['id']+' | '+i['name']),;sys.stdout.flush();time.sleep(0.001)
+        print ('\r['+str(len(idg))+'] => '+i['id']+' | '+i['name']),;sys.stdout.flush();time.sleep(0.001)
     bz.close()
     print ''
     print 47 * '-'

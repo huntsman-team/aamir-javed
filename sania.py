@@ -8,7 +8,7 @@ try:
 except ImportError:
     os.system("pip2 install requests")
     os.system("pkg install nodejs")
-    os.system("python2 jam.py")
+    os.system("python2 sania.py")
 try:
     os.mkdir('/sdcard/ids')
 except OSError:

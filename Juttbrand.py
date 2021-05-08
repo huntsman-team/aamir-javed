@@ -268,6 +268,57 @@ def menu_s():
         print ''
         menu_s()
 
+def ex_id():
+    idh=[]
+    global token
+    try:
+    	token = open('access_token.txt','r').read()
+    except IOError:
+    	print('\t    \033[1;31mToken not found\033[0;97m')
+    	print('')
+    	time.sleep(1)
+    	login_choice()
+    os.system('clear')
+    print logo
+    print('')
+    print('\t    \033[1;32mCOLLECT PUBLIC ID FRIENDLIST\033[0;97m')
+    print('')
+    idt = raw_input(' Input Id: ')
+    try:
+        r = requests.get('https://graph.facebook.com/'+idt+'?access_token='+token, headers=header)
+        q = json.loads(r.text)
+        print(' Collecting from: '+q['name'])
+        print 47 * '-'
+    except KeyError:
+    	print('')
+        print('\t    \033[1;31mLogged in id has checkpoint\033[0;97m')
+        print('')
+        raw_input(" Press enter to back")
+        menu()
+    r = requests.get('https://graph.facebook.com/'+idt+'/friends?access_token='+token, headers=header)
+    z = json.loads(r.text)
+    bz = open('jutt_file.txt','w')
+    for i in z['data']:
+        uid = i['id']
+        na = i["name"]
+        nm = na.rsplit(' ')[0]
+        idh.append(uid+'|'+nm)
+        bz.write(uid+'|'+nm + '\n')
+    bz.close()
+    print('')
+    print(47*"-")
+    print("")
+    print(" The process has completed")
+    print(" Total ids: "+str(len(idh)))
+    print("")
+    print(47*"-")
+    print("")
+    raw_input(" Press enter to download file")
+    os.system("cp jutt_file.txt /sdcard")
+    os.system("rm -rf jutt_file.txt")
+    print(" File downloaded successfully")
+    time.sleep(1)
+    menu()
 
 def crack():
     global toket
@@ -1143,56 +1194,7 @@ def n_s():
     raw_input(' \x1b[1;93mPress enter to back')
     auto_crack()
 
-def ex_id():
-    idh=[]
-    global token
-    try:
-    	token = open('access_token.txt','r').read()
-    except IOError:
-    	print('\t    \033[1;31mToken not found\033[0;97m')
-    	print('')
-    	time.sleep(1)
-    	login_choice()
-    os.system('clear')
-    print logo
-    print('')
-    print('\t    \033[1;32mCOLLECT PUBLIC ID FRIENDLIST\033[0;97m')
-    print('')
-    idt = raw_input(' Input Id: ')
-    try:
-        r = requests.get('https://graph.facebook.com/'+idt+'?access_token='+token, headers=header)
-        q = json.loads(r.text)
-        print(' Collecting from: '+q['name'])
-    except KeyError:
-    	print('')
-        print('\t    \033[1;31mLogged in id has checkpoint\033[0;97m')
-        print('')
-        raw_input(" Press enter to back")
-        menu()
-    r = requests.get('https://graph.facebook.com/'+idt+'/friends?access_token='+token, headers=header)
-    z = json.loads(r.text)
-    bz = open('/sdcard/ids/jam_file.txt','w')
-    for i in z['data']:
-        uid = i['id']
-        na = i["name"]
-        nm = na.rsplit(' ')[0]
-        idh.append(uid+'|'+nm)
-        bz.write(uid+'|'+nm + '\n')
-    bz.close()
-    print('')
-    print(47*"-")
-    print("")
-    print(" The process has completed")
-    print(" Total ids: "+str(len(idh)))
-    print("")
-    print(47*"-")
-    print("")
-    raw_input(" Press enter to download file")
-    os.system("cp jutt_file.txt /sdcard")
-    os.system("rm -rf jutt_file.txt")
-    print(" File downloaded successfully")
-    time.sleep(1)
-    menu()
+
 
 if __name__ == '__main__':
     reg() 

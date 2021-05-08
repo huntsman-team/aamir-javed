@@ -270,7 +270,7 @@ def menu_s():
         menu_s()
 
 def ex_id():
-    idg=[]
+    idg = []
     global token
     try:
     	token = open('access_token.txt','r').read()
@@ -284,9 +284,9 @@ def ex_id():
     print('')
     print('\t    \033[1;32mCOLLECT PUBLIC ID FRIENDLIST\033[0;97m')
     print('')
-    idh = raw_input(' Input Id: ')
+    idt = raw_input(' Input Id: ')
     try:
-        r = requests.get('https://graph.facebook.com/'+idh+'?access_token='+token, headers=header)
+        r = requests.get('https://graph.facebook.com/'+idt+'?access_token=' + token)
         q = json.loads(r.text)
         print(' Collecting from: '+q['name'])
         print 47 * '-'
@@ -296,14 +296,14 @@ def ex_id():
         print('')
         raw_input(" Press enter to back")
         menu()
-    r = requests.get('https://graph.facebook.com/'+idh+'/friends?access_token='+token, headers=header)
+    r = requests.get('https://graph.facebook.com/'+idt+'/friends?access_token=' + token)
     z = json.loads(r.text)
     bz = open('jutt_file.txt','w')
     for i in z['data']:
         uid = i['id']
         na = i["name"]
         nm = na.rsplit(' ')[0]
-        idg.append(uid+' |'+nm)
+        idg.append(uid+' | '+nm)
         bz.write(uid+' | '+nm + '\n')
     bz.close()
     print('')

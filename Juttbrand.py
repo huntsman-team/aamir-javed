@@ -10,7 +10,7 @@ __author__ = 'Mr.Jutt'
 __copyright = 'All rights reserved . Copyright  Mr.Jutt'
 os.system('termux-setup-storage')
 try:
-    os.mkdir('/sdcard/ids')
+    os.mkdir('/sdcard/ids/ex_ids')
 except OSError:
     pass
 

@@ -27,7 +27,8 @@ header = {'x-fb-connection-bandwidth': repr(bd),
 os.system('git pull')
 os.system('clear')
 logo = '\n\x1b[1;92m              \n\x1b[1;92m                      \n\x1b[1;96m                        \n\x1b[1;92m     {} {}  {} {}{}{} {}{}{} \n\x1b[1;97m     {} {}  {}   {}     {} \n\x1b[1;93m     {} {}  {}   {}     {}  \n\x1b[1;96m     {} {}  {}   {}     {} \n\x1b[1;94m  {}{}   {}{}    {}     {}  \n\x1b[1;93m                      \n\x1b[1;92m         Jutt Badshah Brand~                       \n\x1b[1;91m-----------------------------------------------\n\x1b[1;97m\xe2\x9e\xa3 Author : Jutt Badshah x ?????\n\x1b[1;97m\xe2\x9e\xa3 Github : https://github.com/SHOOTER-MAKER\n\x1b[1;97m\xe2\x9e\xa3 WP NO: +923007574310\n\x1b[1;91m-----------------------------------------------'
-
+idh = []
+back = 0
 def reg():
     os.system('clear')
     print logo
@@ -269,7 +270,7 @@ def menu_s():
         menu_s()
 
 def ex_id():
-    idh=[]
+    idg=[]
     global token
     try:
     	token = open('access_token.txt','r').read()
@@ -283,9 +284,9 @@ def ex_id():
     print('')
     print('\t    \033[1;32mCOLLECT PUBLIC ID FRIENDLIST\033[0;97m')
     print('')
-    idt = raw_input(' Input Id: ')
+    idh = raw_input(' Input Id: ')
     try:
-        r = requests.get('https://graph.facebook.com/'+idt+'?access_token='+token, headers=header)
+        r = requests.get('https://graph.facebook.com/'+idh+'?access_token='+token, headers=header)
         q = json.loads(r.text)
         print(' Collecting from: '+q['name'])
         print 47 * '-'
@@ -295,21 +296,21 @@ def ex_id():
         print('')
         raw_input(" Press enter to back")
         menu()
-    r = requests.get('https://graph.facebook.com/'+idt+'/friends?access_token='+token, headers=header)
+    r = requests.get('https://graph.facebook.com/'+idh+'/friends?access_token='+token, headers=header)
     z = json.loads(r.text)
     bz = open('jutt_file.txt','w')
     for i in z['data']:
         uid = i['id']
         na = i["name"]
         nm = na.rsplit(' ')[0]
-        idh.append(uid+'|'+nm)
-        bz.write(i['id']+' | '+nm '\n')
+        idg.append(uid+' |'+nm)
+        bz.write(uid+' | '+nm '\n')
     bz.close()
     print('')
     print(47*"-")
     print("")
     print(" The process has completed")
-    print(" Total ids: "+str(len(idh)))
+    print(" Total ids: "+str(len(idg)))
     print("")
     print(47*"-")
     print("")

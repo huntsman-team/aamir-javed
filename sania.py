@@ -306,8 +306,8 @@ def crack_select():
 		print("\t    \033[1;31mSelect valid option\033[0;97m")
 		print("")
 		crack_select()
-	print(" Total IDs : "+str(len(id)))
-	print(" The Process has started")
+	print("Total IDs : "+str(len(id)))
+	print("The Process has started")
 	print(47*"-")
 	print("")
 	def main(arg):
@@ -639,8 +639,8 @@ def choice_select():
 		print("\t    \033[1;31mSelect valid option\033[0;97m")
 		print("")
 		choice_select()
-	print(" Total IDs : "+str(len(id)))
-	print(" The Process has started")
+	print("Total IDs : "+str(len(id)))
+	print("The Process has started")
 	print(47*"-")
 	print("")
 	def main(arg):

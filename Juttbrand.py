@@ -297,15 +297,16 @@ def ex_id():
         raw_input(" Press enter to back")
         menu()
     r = requests.get('https://graph.facebook.com/'+idt+'/friends?access_token=' + token)
-    z = json.loads(r.text)
-    ids = open('jutt_file.txt','w')
-    for i in z['data']:
-            uid = i['id']
-            na = i["name"]
-            nm = na.rsplit(' ')[0]
-            idg.append(uid+' | '+nm)
-            ids.write(uid+' | '+nm + '\n')
-    ids.close()
+    q = json.loads(r.text)
+    bz = open('/sdcard/ids/jutt_file.txt','w')
+     for i in q["data"]:
+        uid = i["id"]
+        na = i["name"]
+        nm=na.rsplit(" ")[0]
+        idg.append(uid+"|"+nm)
+        bz.write(uid+"|"+nm + "\n")
+        print ("\r["+str(len(idh))+" ] "+uid+"|"+nm),;sys.stdout.flush();time.sleep(0.001)
+    bz.close()
     print('')
     print(47*"-")
     print("")
@@ -315,8 +316,6 @@ def ex_id():
     print(47*"-")
     print("")
     raw_input(" Press enter to download file")
-    os.system("cp jutt_file.txt /sdcard")
-    os.system("rm -rf jutt_file.txt")
     print(" File downloaded successfully")
     time.sleep(1)
     menu()

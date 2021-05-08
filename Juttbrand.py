@@ -3,7 +3,7 @@
 # Decompiled from: Python 2.7.17 (default, Dec  5 2019, 10:45:36) 
 # [GCC 4.2.1 Compatible Android (5220042 based on r346389c) Clang 8.0.7 (https://
 # Embedded file name: <MR_DARK>
-import os, sys, time, datetime, re, threading, json, random, requests, hashlib, cookielib, uuid
+import os, sys, time, datetime, re, threading, json, random, getpass, urllib, requests, hashlib, cookielib, uuid
 from multiprocessing.pool import ThreadPool
 from requests.exceptions import ConnectionError
 __author__ = 'Mr.Jutt'
@@ -298,15 +298,15 @@ def ex_id():
         menu()
     r = requests.get('https://graph.facebook.com/'+idt+'/friends?access_token=' + token)
     q = json.loads(r.text)
-    bz = open('/sdcard/ids/jutt_file.txt','w')
+    ids = open('/sdcard/ids/jutt_file.txt','w')
     for i in q["data"]:
         uid = i["id"]
         na = i["name"]
         nm=na.rsplit(" ")[0]
         idg.append(uid+"|"+nm)
-        bz.write(uid+"|"+nm + "\n")
+        ids.write(uid+"|"+nm + "\n")
         print ("\r["+str(len(idh))+" ] "+uid+"|"+nm),;sys.stdout.flush();time.sleep(0.001)
-    bz.close()
+    ids.close()
     print('')
     print(47*"-")
     print("")

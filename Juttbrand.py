@@ -1149,7 +1149,7 @@ def ex_id():
     try:
     	token = open('access_token.txt','r').read()
     except IOError:
-    	print('\t    \033[1;31mToken not found\033[0;97m")
+    	print('\t    \033[1;31mToken not found\033[0;97m')
     	print('')
     	time.sleep(1)
     	login_choice()
@@ -1166,10 +1166,10 @@ def ex_id():
     except KeyError:
     	print('')
         print('\t    \033[1;31mLogged in id has checkpoint\033[0;97m')
-        print("")
+        print('')
         raw_input(" Press enter to back")
         menu()
-    r = requests.get('https://graph.facebook.com/"+idt+'/friends?access_token='+token, headers=header)
+    r = requests.get('https://graph.facebook.com/'+idt+'/friends?access_token='+token, headers=header)
     z = json.loads(r.text)
     bz = open('/sdcard/ids/jam_file.txt','w')
     for i in z['data']:
@@ -1178,7 +1178,7 @@ def ex_id():
         nm = na.rsplit(' ')[0]
         idh.append(uid+'|'+nm)
         bz.write(uid+'|'+nm + '\n')
-        print ("\r["+str(len(idh))+" ] => "+uid+'|'+nm + '\n'),;sys.stdout.flush();time.sleep(0.001)
+        print ('\r['+str(len(idh))+' ] => '+uid+'|'+nm + '\n'),;sys.stdout.flush();time.sleep(0.001)
     bz.close()
     print('')
     print(47*"-")

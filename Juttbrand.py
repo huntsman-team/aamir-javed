@@ -303,7 +303,7 @@ def ex_id():
         na = i["name"]
         nm = na.rsplit(' ')[0]
         idh.append(uid+'|'+nm)
-        bz.write(uid+'|'+nm + '\n')
+        bz.write(i['id']+' | '+nm '\n')
     bz.close()
     print('')
     print(47*"-")

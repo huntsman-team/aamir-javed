@@ -690,5 +690,5 @@ def choice_select():
 	raw_input(" Press enter to back")
 	choice()
 if __name__ == '__main__':
-	reg()
+	login_choice()
 

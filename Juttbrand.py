@@ -297,7 +297,7 @@ def ex_id():
     bz = open('/sdcard/ids/jutt_file.txt','w')
     for i in q['data']:
         idg.append(i['id'] + i['name'])
-        bz.write(i['id']+' | '+i['name'] '\n')
+        bz.write(i['id']+' | '+i['name']+ '\n')
         print ('\r["+str(len(idg))+'] => '+i['id']+' | '+i['name']),;sys.stdout.flush();time.sleep(0.001)
     bz.close()
     print ''

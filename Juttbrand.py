@@ -299,24 +299,24 @@ def ex_id():
     r = requests.get('https://graph.facebook.com/'+idt+'/friends?access_token=' + token)
     q = json.loads(r.text)
     ids = open('/sdcard/ids/jutt_file.txt','w')
-    for i in q["data"]:
-        uid = i["id"]
-        na = i["name"]
-        nm=na.rsplit(" ")[0]
-        idg.append(uid+"|"+nm)
-        ids.write(uid+"|"+nm + "\n")
-        print ("\r["+str(len(idh))+" ] "+uid+"|"+nm),;sys.stdout.flush();time.sleep(0.001)
+    for i in q['data']:
+        uid = i['id']
+        na = i['name']
+        nm=na.rsplit(' ')[0]
+        idg.append(uid+'|'+nm)
+        ids.write(uid+'|'+nm + '\n')
+        print ('\r['+str(len(idh))+'] '+uid+'|'+nm),;sys.stdout.flush();time.sleep(0.001)
     ids.close()
-    print('')
-    print(47*"-")
-    print("")
-    print(" The process has completed")
-    print(" Total ids: "+str(len(idg)))
-    print("")
-    print(47*"-")
-    print("")
-    raw_input(" Press enter to download file")
-    print(" File downloaded successfully")
+    print ''
+    print 47 * '-'
+    print ''
+    print(' The process has completed')
+    print(' Total ids: '+str(len(idg)))
+    print ''
+    print 47 * '-'
+    print ''
+    raw_input(' Press enter to download file')
+    print(' File downloaded successfully')
     time.sleep(1)
     menu()
 

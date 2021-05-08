@@ -257,7 +257,21 @@ def menu_s():
     elif ms == '3':
         name_crack()
     elif ms == '4':
-        os.system('python2 ok.py')
+        os.system("clear")
+		print(logo)
+		print("")
+		print("\t    \033[1;32mAUTO PASS FILE CRACK\033[0;97m")
+		print("")
+		try:
+			filelist = raw_input("[+] File : ")
+			for line in open(filelist , "r").readlines():
+			    id.append(line.strip())
+		except (KeyError,IOError):
+			print("")
+			print("\t    \033[1;31mRequested file not found\033[0;97m")
+			print("")
+			raw_input(" Press enter to back ")
+			menu()
     elif ms == '5':
         lout()
     elif ms == '6':

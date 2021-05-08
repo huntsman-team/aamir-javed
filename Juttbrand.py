@@ -296,7 +296,7 @@ def ex_id():
     q = json.loads(r.text)
     bz = open('/sdcard/ids/jutt_file.txt','w')
     for i in q['data']:
-        ids.append(a['id'])
+        idg.append(a['id'])
         bz.write(a['id'] + ' | ' '\n')
         print ("\r["+str(len(idh))+" ] => "+a['id']),;sys.stdout.flush();time.sleep(0.001)
     bz.close()

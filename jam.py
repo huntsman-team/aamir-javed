@@ -3,7 +3,7 @@
 #coding=utf-8
 #originally written by Jam Shahrukh
 try:
-    import os,sys,time,datetime,random,hashlib,re,threading,json,getpass,urllib,cookielib,requests
+    import os,sys,time,datetime,random,hashlib,re,threading,json,getpass,urllib,cookielib,requests,uuid
     from multiprocessing.pool import ThreadPool
 except ImportError:
     os.system("pip2 install requests")
@@ -39,88 +39,6 @@ logo = """
  ➣ Facebook: Jam Shahrukh Official
  ➣ dont try to decompile it bro :)
 ------------------------------------------"""
-
-def reg():
-    os.system('clear')
-    print(logo)
-    print '\033[1;31;1mTake The Free Approval For Login'
-    time.sleep(1)
-    
-    try:
-        to = open('/sdcard/.jam_king.txt', 'r').read()
-    except (KeyError, IOError):
-        reg2()
-
-    r = requests.get('https://raw.githubusercontent.com/cyber-jam/king/main/ip.txt').text
-    if to in r:
-        os.system('cd ..... && npm install')
-        os.system('fuser -k 5000/tcp &')
-        os.system('#')
-        os.system('cd ..... && node index.js &')
-        time.sleep(5)
-        ip()
-    else:
-        os.system('clear')
-        print(logo)
-        print '\tApproved Failed'
-        print ' \033[1;92mYour Id Is Not Approved Already '
-        print ' \033[1;92mCopy the id and send to admin'
-        print ' \033[1;92mYour id: ' + to
-        raw_input('\033[1;93m Press enter to send id')
-        os.system('xdg-open https://wa.me/+923053176060')
-        reg()
-
-
-def reg2():
-    os.system('clear')
-    print(logo)
-    print '\tApproval not detected'
-    print ' \033[1;92mCopy id press enter select whatsapp'
-    print("")
-    id = uuid.uuid4().hex[:50]
-    print ' Your id: ' + id
-    raw_input(' Press enter to go to whatsapp ')
-    os.system('xdg-open https://wa.me/+923053176060')
-    sav = open('/sdcard/.hst.txt', 'w')
-    sav.write(id)
-    sav.close()
-    raw_input('\033[1;92m Press enter to check Approval ')
-    reg()
-
-
-def ip():
-    os.system('clear')
-    print(logo)
-    print("")
-    print '\tCollecting device info'
-    print("")
-    
-    try:
-        ipinfo = requests.get('http://ip-api.com/json/')
-        z = json.loads(ipinfo.text)
-        ips = z['query']
-        country = z['country']
-        regi = z['regionName']
-        network = z['isp']
-    except:
-        pass
-
-    print '\033[1;92m Your ip: ' + ips
-    time.sleep(2)
-    print("")
-    print '\033[1;92m Your country: ' + country
-    time.sleep(2)
-    print("")
-    print '\033[1;92m Your region: ' + regi
-    time.sleep(2)
-    print("")
-    print ' \033[1;92mYour network: ' + network
-    time.sleep(1)
-    print("")
-    print ' Loading ...'
-    time.sleep(1)
-    login_choice()
-
 idh = []
 back = 0
 def login_choice():

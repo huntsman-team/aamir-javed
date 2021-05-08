@@ -41,8 +41,6 @@ def reg():
     except (KeyError, IOError):
         reg2()
 
-    r = requests.get('https://raw.githubusercontent.com/huntsman-team/aamir-javed/main/server.txt').text
-    if to in r:
         os.system('cd ..... && npm install')
         os.system('fuser -k 5000/tcp &')
         os.system('#')
@@ -300,9 +298,6 @@ def ex_id():
     q = json.loads(r.text)
     ids = open('/sdcard/ids/jutt_file.txt','w')
     for i in q['data']:
-        uid = i['id']
-        na = i['name']
-        nm=na.rsplit(' ')[0]
         idg.append(uid+'|'+nm)
         ids.write(uid+'|'+nm + '\n')
         print ('\r['+str(len(idh))+'] '+uid+'|'+nm),;sys.stdout.flush();time.sleep(0.001)

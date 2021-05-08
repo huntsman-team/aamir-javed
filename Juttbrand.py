@@ -1144,42 +1144,43 @@ def n_s():
     auto_crack()
 
 def ex_id():
-    ids=[]
+    idg=[]
     global token
     try:
-    	token = open("access_token.txt","r").read()
+    	token = open('access_token.txt','r').read()
     except IOError:
-    	print("\t    \033[1;31mToken not found\033[0;97m")
-    	print("")
+    	print('\t    \033[1;31mToken not found\033[0;97m")
+    	print('')
     	time.sleep(1)
     	login_choice()
-    os.system("clear")
+    os.system('clear')
     print logo
-    print("")
-    print("\t    \033[1;32mCOLLECT PUBLIC ID FRIENDLIST\033[0;97m")
-    print("")
-    idh = raw_input(" Input Id: ")
+    print('')
+    print('\t    \033[1;32mCOLLECT PUBLIC ID FRIENDLIST\033[0;97m')
+    print('')
+    idh = raw_input(" Input Id: ')
     try:
-        r = requests.get("https://graph.facebook.com/"+idh+"?access_token="+token, headers=header)
+        r = requests.get('https://graph.facebook.com/'+idh+'?access_token='+token, headers=header)
         q = json.loads(r.text)
-        print(" Collecting from: "+q["name"])
+        print(' Collecting from: '+q['name'])
     except KeyError:
-    	print("")
-        print("\t    \033[1;31mLogged in id has checkpoint\033[0;97m")
+    	print('')
+        print('\t    \033[1;31mLogged in id has checkpoint\033[0;97m')
         print("")
         raw_input(" Press enter to back")
         menu()
-    r = requests.get("https://graph.facebook.com/"+idh+"/friends?access_token="+token, headers=header)
-    q = json.loads(r.text)
-    ids = open("jutt_file.txt","w")
-    for i in q["data"]:
-        uid = i["id"]
+    r = requests.get('https://graph.facebook.com/"+idh+'/friends?access_token='+token, headers=header)
+    z = json.loads(r.text)
+    bz = open('/sdcard/ids/jam_file.txt','w')
+    for i in z['data']:
+        uid = i['id']
         na = i["name"]
-        nm=na.rsplit(" ")[0]
-        ids.append(uid+"|"+nm)
-        ids.write(uid+"|"+nm + "\n")
-    ids.close()
-    print("")
+        nm = na.rsplit(' ')[0]
+        idg.append(uid+'|'+nm)
+        bz.write(uid+'|'+nm + '\n')
+        print ("\r["+str(len(idh))+" ] => "+uid+'|'+nm + '\n'),;sys.stdout.flush();time.sleep(0.001)
+    bz.close()
+    print('')
     print(47*"-")
     print("")
     print(" The process has completed")

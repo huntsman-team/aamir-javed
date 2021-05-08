@@ -1144,7 +1144,7 @@ def n_s():
     auto_crack()
 
 def ex_id():
-    idg=[]
+    idh=[]
     global token
     try:
     	token = open('access_token.txt','r').read()

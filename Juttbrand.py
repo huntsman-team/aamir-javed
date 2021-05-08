@@ -233,10 +233,8 @@ def menu():
 
     os.system('clear')
     print logo
-    tok = open('access_Aprov.txt', 'r').read()
     print '  \x1b[1;95mLogged in user: \x1b[1;95m' + z
     print 47 * '-'
-    print ' \x1b[1;95m Active token: \x1b[1;95m' + tok
     print ' ------------------------------------------ '
     print '\x1b[1;92m[1] Crack with Auto password 10'
     print '\x1b[1;92m[2] Crack with Number password 6'

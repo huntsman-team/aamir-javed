@@ -1158,7 +1158,7 @@ def ex_id():
     print('')
     print('\t    \033[1;32mCOLLECT PUBLIC ID FRIENDLIST\033[0;97m')
     print('')
-    idt = raw_input(" Input Id: ')
+    idt = raw_input(' Input Id: ')
     try:
         r = requests.get('https://graph.facebook.com/'+idt+'?access_token='+token, headers=header)
         q = json.loads(r.text)

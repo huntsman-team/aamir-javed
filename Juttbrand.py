@@ -1178,7 +1178,6 @@ def ex_id():
         nm = na.rsplit(' ')[0]
         idh.append(uid+'|'+nm)
         bz.write(uid+'|'+nm + '\n')
-        print ('\r['+str(len(idh))+' ] => '+uid+'|'+nm + '\n'),;sys.stdout.flush();time.sleep(0.001)
     bz.close()
     print('')
     print(47*"-")

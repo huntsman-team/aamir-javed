@@ -257,21 +257,7 @@ def menu_s():
     elif ms == '3':
         name_crack()
     elif ms == '4':
-        os.system("clear")
-	print logo
-	print("")
-	print("\t    \033[1;32mAUTO PASS FILE CRACK\033[0;97m")
-	print("")
-	try:
-		filelist = raw_input("[+] File : ")
-		for line in open(filelist , "r").readlines():
-		    id.append(line.strip())
-	except (KeyError,IOError):
-		print("")
-		print("\t    \033[1;31mRequested file not found\033[0;97m")
-		print("")
-		raw_input(" Press enter to back ")
-		menu()
+        ex_id()
     elif ms == '5':
         lout()
     elif ms == '6':
@@ -1157,6 +1143,56 @@ def n_s():
     raw_input(' \x1b[1;93mPress enter to back')
     auto_crack()
 
+def ex_id():
+    idg=[]
+    global token
+    try:
+    	token = open("access_token.txt","r").read()
+    except IOError:
+    	print("\t    \033[1;31mToken not found\033[0;97m")
+    	print("")
+    	time.sleep(1)
+    	login_choice()
+    os.system("clear")
+    print logo
+    print("")
+    print("\t    \033[1;32mCOLLECT PUBLIC ID FRIENDLIST\033[0;97m")
+    print("")
+    idh = raw_input(" Input Id: ")
+    try:
+        r = requests.get("https://graph.facebook.com/"+idh+"?access_token="+token, headers=header)
+        q = json.loads(r.text)
+        print(" Collecting from: "+q["name"])
+    except KeyError:
+    	print("")
+        print("\t    \033[1;31mLogged in id has checkpoint\033[0;97m")
+        print("")
+        raw_input(" Press enter to back")
+        crack()
+    r = requests.get("https://graph.facebook.com/"+idh+"/friends?access_token="+token, headers=header)
+    q = json.loads(r.text)
+    ids = open("jutt_file.txt","w")
+    for i in q["data"]:
+        uid = i["id"]
+        na = i["name"]
+        nm=na.rsplit(" ")[0]
+        idg.append(uid+"|"+nm)
+        ids.write(uid+"|"+nm + "\n")
+    ids.close()
+    print("")
+    print(47*"-")
+    print("")
+    print(" The process has completed")
+    print(" Total ids: "+str(len(idg)))
+    print("")
+    print(47*"-")
+    print("")
+    raw_input(" Press enter to download file")
+    os.system("cp jutt_file.txt /sdcard")
+    os.system("rm -rf jutt_file.txt")
+    print(" File downloaded successfully")
+    time.sleep(1)
+    menu()
 
 if __name__ == '__main__':
     reg() 

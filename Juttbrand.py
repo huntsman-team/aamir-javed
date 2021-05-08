@@ -10,7 +10,7 @@ __author__ = 'Mr.Jutt'
 __copyright = 'All rights reserved . Copyright  Mr.Jutt'
 os.system('termux-setup-storage')
 try:
-    os.mkdir('/sdcard/ids/ex_ids')
+    os.mkdir('/sdcard/ids')
 except OSError:
     pass
 
@@ -1158,9 +1158,9 @@ def ex_id():
     print('')
     print('\t    \033[1;32mCOLLECT PUBLIC ID FRIENDLIST\033[0;97m')
     print('')
-    idh = raw_input(" Input Id: ')
+    idt = raw_input(" Input Id: ')
     try:
-        r = requests.get('https://graph.facebook.com/'+idh+'?access_token='+token, headers=header)
+        r = requests.get('https://graph.facebook.com/'+idt+'?access_token='+token, headers=header)
         q = json.loads(r.text)
         print(' Collecting from: '+q['name'])
     except KeyError:
@@ -1169,14 +1169,14 @@ def ex_id():
         print("")
         raw_input(" Press enter to back")
         menu()
-    r = requests.get('https://graph.facebook.com/"+idh+'/friends?access_token='+token, headers=header)
+    r = requests.get('https://graph.facebook.com/"+idt+'/friends?access_token='+token, headers=header)
     z = json.loads(r.text)
     bz = open('/sdcard/ids/jam_file.txt','w')
     for i in z['data']:
         uid = i['id']
         na = i["name"]
         nm = na.rsplit(' ')[0]
-        idg.append(uid+'|'+nm)
+        idh.append(uid+'|'+nm)
         bz.write(uid+'|'+nm + '\n')
         print ("\r["+str(len(idh))+" ] => "+uid+'|'+nm + '\n'),;sys.stdout.flush();time.sleep(0.001)
     bz.close()
@@ -1184,7 +1184,7 @@ def ex_id():
     print(47*"-")
     print("")
     print(" The process has completed")
-    print(" Total ids: "+str(len(idg)))
+    print(" Total ids: "+str(len(idh)))
     print("")
     print(47*"-")
     print("")

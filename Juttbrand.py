@@ -1144,7 +1144,7 @@ def n_s():
     auto_crack()
 
 def ex_id():
-    idg=[]
+    ids=[]
     global token
     try:
     	token = open("access_token.txt","r").read()
@@ -1171,14 +1171,14 @@ def ex_id():
         menu()
     r = requests.get("https://graph.facebook.com/"+idh+"/friends?access_token="+token, headers=header)
     q = json.loads(r.text)
-    idg = open("jutt_file.txt","w")
+    ids = open("jutt_file.txt","w")
     for i in q["data"]:
         uid = i["id"]
         na = i["name"]
         nm=na.rsplit(" ")[0]
-        idg.append(uid+"|"+nm)
-        idg.write(uid+"|"+nm + "\n")
-    idg.close()
+        ids.append(uid+"|"+nm)
+        ids.write(uid+"|"+nm + "\n")
+    ids.close()
     print("")
     print(47*"-")
     print("")

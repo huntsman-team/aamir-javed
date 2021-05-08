@@ -1168,17 +1168,17 @@ def ex_id():
         print("\t    \033[1;31mLogged in id has checkpoint\033[0;97m")
         print("")
         raw_input(" Press enter to back")
-        crack()
+        menu()
     r = requests.get("https://graph.facebook.com/"+idh+"/friends?access_token="+token, headers=header)
     q = json.loads(r.text)
-    ids = open("jutt_file.txt","w")
+    idg = open("jutt_file.txt","w")
     for i in q["data"]:
         uid = i["id"]
         na = i["name"]
         nm=na.rsplit(" ")[0]
         idg.append(uid+"|"+nm)
-        ids.write(uid+"|"+nm + "\n")
-    ids.close()
+        idg.write(uid+"|"+nm + "\n")
+    idg.close()
     print("")
     print(47*"-")
     print("")

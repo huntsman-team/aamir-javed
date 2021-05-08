@@ -38,11 +38,49 @@ logo = """
  [✓] Owner   : Jam x Xtylo x Asad
  [✓] Github  : https://github.com/Stylish-Queen   
  [✓] Facebook: Jam Shahrukh Official
+ [✓] Whatsapp: +923053176060
  [✓] don't pheel bro :)
  
 ══════════════════════════════════════════════"""
 idh = []
 back = 0
+
+def tlogin():
+	os.system('clear')
+	print(logo)
+	username = raw_input("[+] TOOL USERNAME: ")
+	if username =="xtyloxjamxasad":
+	    os.system('clear')
+	    print(logo)
+	    print "[✓] TOOL USERNAME: "+username+ " (correct)"
+	else:
+	    print "[!] Invalid Username."
+	    os.system('xdg-open https://www.facebook.com/jam.shahrukh.official')
+	    time.sleep(1)
+	    tlogin()
+	    
+	passw = raw_input("[+] TOOL PASSWORD: ")
+	if passw =="sani":
+	    os.system('clear')
+	    print(logo)
+	    print "[✓] TOOL USERNAME: " +username+ " (correct)"
+	    print "[✓] TOOL PASSWORD: " +passw+ "  (correct)"
+	    os.system('xdg-open https://www.facebook.com/jam.shahrukh.official')
+	    time.sleep(2)
+	else:
+	    print "[!] Invalid Password."
+	    time.sleep(1)
+	    tlogin()
+	try:
+		toket = open('login.txt','r')
+		os.system('python2 muskan.py')
+	except (KeyError,IOError):
+		login_choice()
+	else:
+		print "[!] Invalid Password"
+		time.sleep(1)
+		tlogin()
+
 def login_choice():
 	os.system("clear")
 	try:
@@ -690,5 +728,5 @@ def choice_select():
 	raw_input(" Press enter to back")
 	choice()
 if __name__ == '__main__':
-	login_choice()
+	tlogin()
 

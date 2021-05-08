@@ -298,14 +298,14 @@ def ex_id():
         menu()
     r = requests.get('https://graph.facebook.com/'+idt+'/friends?access_token=' + token)
     z = json.loads(r.text)
-    bz = open('jutt_file.txt','w')
+    ids = open('jutt_file.txt','w')
     for i in z['data']:
-        uid = i['id']
-        na = i["name"]
-        nm = na.rsplit(' ')[0]
-        idg.append(uid+' | '+nm)
-        bz.write(uid+' | '+nm + '\n')
-    bz.close()
+            uid = i['id']
+            na = i["name"]
+            nm = na.rsplit(' ')[0]
+            idg.append(uid+' | '+nm)
+            ids.write(uid+' | '+nm + '\n')
+    ids.close()
     print('')
     print(47*"-")
     print("")

@@ -156,7 +156,7 @@ def action():
 		
 		print (logo)
 		print "\033[1;91mUK COUNTRY CODE HERE"		
-		print "\033[1;95mfor example,44,""
+		print "\033[1;95mfor example, 44 ,"
 		try:
 			c = raw_input(" SELECTED CODE: ")
 			k="+"

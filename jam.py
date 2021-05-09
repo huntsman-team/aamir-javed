@@ -247,8 +247,8 @@ def action():
 									cps.write(c+user+'|'+pass3+'\n')
 									cps.close()
 									cpb.append(c+user+pass3)
-	except:																		
-		pass
+	        except:																		
+		        pass
 	p = ThreadPool(30)
         p.map(main, id)
         print '\x1b[1;97m--------------------------------------------------'

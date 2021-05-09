@@ -20,7 +20,7 @@ try:
 except ImportError:
     os.system('No Module Named Mechanize! type:pip2 install mechanize')
     time.sleep(1)
-    os.system('Then type: python2 jam.py')
+    os.system('Then type: python2 number.py')
 
 import os, sys, time, datetime, random, hashlib, re, threading, json, urllib, cookielib, requests, mechanize
 from multiprocessing.pool import ThreadPool
@@ -119,7 +119,6 @@ def menu():
 	print "\033[1;92m[1]  India"
 	print "\033[1;92m[2]  Uk"
 	print "\033[1;92m[3]  Usa"
-	print "\033[1;92m[4]  BACK TO MAIN MENU"
 	
 	
 	    

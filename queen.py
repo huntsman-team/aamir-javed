@@ -174,19 +174,19 @@ def idfrompost():
 	except IOError:
 		print"[!] Error While Creating file"
 		raw_input("\nPress Enter To Back ")
-		os.system('python2 sania.py')
+		grab()
 	except (KeyboardInterrupt,EOFError):
 		print("[!]The Process Has Been Stopped")
 		raw_input("\nPress Enter To Back ")
-		os.system('python2 sania.py')
+		grab()
 	except KeyError:
 		print('[!] Error')
 		raw_input("\nPress Enter To Back ")
-		os.system('python2 sania.py')
+		grab()
 	except requests.exceptions.ConnectionError:
 		print"[✖] No Connection"
 		time.sleep(1)
-		os.system('python2 sania.py')
+		grab()
 	
 if __name__ == '__main__':
-	idfrompost()
+	grab()

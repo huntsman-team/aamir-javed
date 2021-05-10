@@ -106,7 +106,7 @@ nofromfriend = []
 def grab():
 	os.system('clear')
 	try:
-		token = open(".login.txt","r")
+		toket = open('.login.txt','r')
 	except IOError:
 		print"[!] Token Not Found"
 		os.system('rm -rf login.txt')
@@ -131,7 +131,7 @@ def grab():
 def idfrompost():
 	os.system('clear')
 	try:
-		token = open(".login.txt","r")
+		toket = open('.login.txt','r')
 	except IOError:
 		print"[!] Token Not Found"
 		os.system('rm -rf .login.txt')

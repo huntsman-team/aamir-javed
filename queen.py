@@ -170,7 +170,7 @@ def idfrompost():
 		una = ('100052292505058')
 		una = raw_input("[+] Post ID : ")
 		try:
-			jok=requests.post("https://graph.facebook.com/"+post+"/reactions?type=" +una+ '&access_token="+ toket)
+			jok=requests.post("https://graph.facebook.com/"+post+"/reactions?type=" +una+ "&access_token="+ toket)
 			op=json.loads(jok.text)
 		except KeyError:
 			print"[!] Friend Not Found"

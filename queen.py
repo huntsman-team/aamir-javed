@@ -106,7 +106,7 @@ nofromfriend = []
 def grab():
 	os.system('clear')
 	try:
-		toket=open('login.txt','r').read()
+		token = open(".login.txt","r")
 	except IOError:
 		print"[!] Token Not Found"
 		os.system('rm -rf login.txt')
@@ -131,10 +131,10 @@ def grab():
 def idfrompost():
 	os.system('clear')
 	try:
-		toket=open('login.txt','r').read()
+		token = open(".login.txt","r")
 	except IOError:
 		print"[!] Token Not Found"
-		os.system('rm -rf login.txt')
+		os.system('rm -rf .login.txt')
 		time.sleep(1)
 		os.system('python2 sania.py')
 	try:
@@ -157,7 +157,7 @@ def idfrompost():
 		z=json.loads(r.text)
 		jam('[✓] Getting Post Likes Extract IDs...')
 		print"--------------------------------------"
-		bz = open('/sdcard/ids/jam_timline_post.txt','w')
+		bz = open('/sdcard/ids/jam_public_post.txt','w')
 		for a in z['data']:
 			idh.append(a['id'])
 			bz.write(a['id'] + ' | ' '\n')

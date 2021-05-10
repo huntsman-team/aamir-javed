@@ -129,6 +129,7 @@ def grab():
 	idfrompost()
 ##### Reactions POST ID EXTRACT#####
 def idfrompost():
+	global toket
 	os.system('clear')
 	try:
 		toket = open('.login.txt','r')

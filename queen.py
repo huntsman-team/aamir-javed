@@ -151,7 +151,7 @@ def idfromfriend():
 	global toket
 	os.system('clear')
 	try:
-		toket=open('.login.txt','r').read()
+		toket = open('.login.txt','r').read()
 	except IOError:
 		print"[!] Token Not Found"
 		os.system('rm -rf .login.txt')
@@ -211,12 +211,12 @@ def idfrompost():
 	global toket
 	os.system('clear')
 	try:
-		toket=open('login.txt','r').read()
+		toket=open('.login.txt','r').read()
 	except IOError:
 		print"[!] Token Not Found"
-		os.system('rm -rf login.txt')
+		os.system('rm -rf .login.txt')
 		time.sleep(1)
-		('python2 jam.py')
+		os.system('python2 sania.py')
 	try:
 		os.mkdir('/sdcard/ids')
 	except OSError:

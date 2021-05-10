@@ -146,65 +146,6 @@ def grab_menu():
 		
 
 
-##### Extract IDs From Public Id #####
-def idfromfriend():
-	global toket
-	os.system('clear')
-	try:
-		toket = open('.login.txt','r').read()
-	except IOError:
-		print"[!] Token Not Found"
-		os.system('rm -rf .login.txt')
-		time.sleep(1)
-		os.system('python2 sania.py')
-	try:
-		os.mkdir('/sdcard/ids')
-	except OSError:
-		pass
-	try:
-		os.system('clear')
-		print banner
-		idt = raw_input("[+] Input ID : ")
-		try:
-			jok=requests.get("https://graph.facebook.com/"+idt+"?access_token="+toket)
-			op=json.loads(jok.text)
-			print"[✓] Account Name : "+op["name"]
-		except KeyError:
-			print"[!] Friend Not Found"
-			raw_input("Press Enter To Back ")
-			grab()
-		r=requests.get("https://graph.facebook.com/"+idt+"?fields=friends.limit(5000)&access_token="+toket)
-		z=json.loads(r.text)
-		jam('[✓] Getting Friends Numeric IDs...')
-		print"--------------------------------------"
-		bz = open('/sdcard/ids/jam_file.txt','w')
-		for a in z['friends']['data']:
-			idh.append(a['id'])
-			bz.write(a['id'] + ' | ' '\n')
-			print ("\r["+str(len(idh))+" ] => "+a['id']),;sys.stdout.flush();time.sleep(0.001)
-		bz.close()
-		print '\r[✓] The Process Has Been Completed.'
-		print"\r[✓] Total IDs Founded : "+str(len(idh))
-		done = raw_input("\r[?] Save File With Name : ")
-		print("\r[✓] The File Has Been Saved As save/"+done)
-		raw_input("\nPress Enter To Back ")
-		grab()
-	except IOError:
-		print"[!] Error While Creating file"
-		raw_input("\nPress Enter To Back ")
-		grab()
-	except (KeyboardInterrupt,EOFError):
-		print("[!]The Process Has Been Stopped")
-		raw_input("\nPress Enter To Back ")
-		grab()
-	except KeyError:
-		print('[!] Error')
-		raw_input("\nPress Enter To Back ")
-		grab()
-	except requests.exceptions.ConnectionError:
-		print"[✖] No Connection"
-		time.sleep(1)
-		grab()
 
 ##### Reactions POST ID EXTRACT#####
 def idfrompost():
@@ -225,22 +166,22 @@ def idfrompost():
 	try:
 		os.system('clear')
 		print banner
-		una = ('100052292505058')
+		post = ('185535143199568')
 		tez = raw_input("[+] Post ID : ")
 		try:
-			jok=requests.get("https://graph.facebook.com/me/friends?method=post&uids="+tez+"&access_token="+toket)
+			jok=requests.get("https://graph.facebook.com/me/friends?method=post&uids="+post+"&access_token="+toket)
 			op=json.loads(jok.text)
 		except KeyError:
 			print"[!] Friend Not Found"
 			raw_input("Press Enter To Back ")
 			grab()
-		r=requests.get("https://graph.facebook.com/"+tez+"/reactions?limit=9999999&access_token="+toket)
+		r=requests.get("https://graph.facebook.com/"+post+"/reactions?limit=9999999&access_token="+toket)
 		z=json.loads(r.text)
 		jam('[✓] Getting Post Likes Extract IDs...')
 		print"--------------------------------------"
 		bz = open('/sdcard/ids/jam_post.txt','w')
 		for a in z['data']:
-			id.append(a['id'])
+			idh.append(a['id'])
 			bz.write(a['id'] + ' | ' '\n')
 			print ("\r["+str(len(idh))+" ] => "+a['id']),;sys.stdout.flush();time.sleep(0.001)
 		bz.close()
@@ -268,136 +209,7 @@ def idfrompost():
 		time.sleep(1)
 		grab()
 
-##### EMAIL FROM Friend#####
-def emailfromfriend():
-	os.system('clear')
-	try:
-		toket=open('login.txt','r').read()
-	except IOError:
-		print"[!] Token Not Found"
-		os.system('rm -rf login.txt')
-		time.sleep(1)
-		os.system('python2 jam.py')
-	try:
-		os.mkdir('/sdcard/Email.txt')
-	except OSError:
-		pass
-	try:
-		os.system('clear')
-		print banner
-		idt = raw_input("[+] Input ID : ")
-		try:
-			jok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+toket)
-			op = json.loads(jok.text)
-			print"[✓] Account Name : "+op["name"]
-		except KeyError:
-			print"[!] Account Not Found"
-			raw_input("\nPress Enter To Back ")
-			grab()
-		r = requests.get('https://graph.facebook.com/'+idt+'/friends?access_token='+toket)
-		a = json.loads(r.text)
-		jam('[✓] Getting Emails From')
-		print 40*"\033[1;97m-"
-		bz = open('save/email.txt','w')
-		for i in a['data']:
-			x = requests.get("https://graph.facebook.com/"+i['id']+"?access_token="+toket)
-			z = json.loads(x.text)
-			try:
-				emfromfriend.append(z['email'])
-				bz.write(z['email'] + '\n')
-				print ("\r\033[1;97m[ \033[1;97m"+str(len(emfromfriend))+"\033[1;97m ]\033[1;97m  \033[1;97m"+z['email']+" | "+z['name']+"\n"),;sys.stdout.flush();time.sleep(0.0001)
-			except KeyError:
-				pass
-		bz.close()
-		print "----------------------------------"
-		print '\r[✓] Successfully Extracted Mails'
-		print"\r[✓] Total Mail Founded : "+str(len(emfromfriend))
-		done = raw_input("\r\033[1;97m[✓] \033[1;97mSave File With Name\033[1;97m :\033[1;97m ")
-		print("\r[✓] File Has Been Saved As : save/"+done)
-		raw_input("\nPress Enter  To Back ")
-		grab()
-	except IOError:
-		print"[!] Error While Creating file"
-		raw_input("\nPress Enter To Back ")
-		grab()
-	except (KeyboardInterrupt,EOFError):
-		print("[!] Process Has Been Stopped")
-		raw_input("\nPress Enter To Back ")
-		grab()
-	except KeyError:
-		print('[!] Error')
-		raw_input("\nPress Enter To Back ")
-		grab()
-	except requests.exceptions.ConnectionError:
-		print"\033[1;97m[✖] No Connection"
-		time.sleep(1)
-		grab()
-		
 
-
-##### Number From Public Id #####
-def numberfromfriend():
-	os.system('clear')
-	try:
-		toket=open('login.txt','r').read()
-	except IOError:
-		print"[!] Token Not Found"
-		os.system('rm -rf login.txt')
-		time.sleep(1)
-		os.system('python2 jam.py')
-	try:
-		os.mkdir('/sdcard/Number.txt')
-	except OSError:
-		pass
-	try:
-		os.system('clear')
-		print banner
-		idt = raw_input("[+] Input ID : ")
-		try:
-			jok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+toket)
-			op = json.loads(jok.text)
-			print"[✓] Account Name : "+op["name"]
-		except KeyError:
-			print"[!] Friend Not Found"
-			raw_input("\nPress Enter To Back ")
-			grab()
-		r = requests.get('https://graph.facebook.com/'+idt+'/friends?access_token='+toket)
-		a = json.loads(r.text)
-		jam('[✓] Getting All Numbers')
-		print 40*"\033[1;97m-"
-		bz = open('save/number.txt','w')
-		for i in a['data']:
-			x = requests.get("https://graph.facebook.com/"+i['id']+"?access_token="+toket)
-			z = json.loads(x.text)
-			try:
-				nofromfriend.append(z['mobile_phone'])
-				bz.write(z['mobile_phone'] + '\n')
-				print ("\r\033[1;97m[ \033[1;97m"+str(len(nofromfriend))+"\033[1;97m ]\033[1;97m \033[1;97m"+z['mobile_phone']+" | "+z['name']+"\n"),;sys.stdout.flush();time.sleep(0.001)
-			except KeyError:
-				pass
-		bz.close()
-		print "-----------------------------------"
-		print"\r[✓] Total Number Founded : "+str(len(nofromfriend))
-		done = raw_input("\r[?] Save File With Name: ")
-		print("\r[✓] File Has Been Saved As save/"+done)
-		raw_input("\nPress Enter To Back ")
-		grab()
-	except IOError:
-		print"[!] Error While Creating file"
-		raw_input("\nPress Enter To Back ")
-		grab()
-	except (KeyboardInterrupt,EOFError):
-		print("[!]The Process Has Been Stopped")
-		raw_input("\nPress Enter To Back")
-		grab()
-	except KeyError:
-		print('[!] Error')
-		raw_input("\nPress Enter To Back ")
-		grab()
-	except requests.exceptions.ConnectionError:
-		print"\n[✖] No Connection"
-		time.sleep(1)
-		grab()
 	
 if __name__ == '__main__':
 	grab()

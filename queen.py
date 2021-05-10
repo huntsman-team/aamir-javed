@@ -58,7 +58,7 @@ def sani(z):
 		time.sleep(0.1)
 ##### LOGO #####
 banner = """
-        \033[1;91m     ██ ███████ ███    ███ 
+        \033[1;95m     ██ ███████ ███    ███ 
              ██ ██   ██ ████  ████ 
              ██ ███████ ██ ████ ██ 
         \033[1;96m██   ██ ██   ██ ██  ██  ██ 
@@ -226,21 +226,21 @@ def idfrompost():
 		os.system('clear')
 		print banner
 		una = ('100052292505058')
-		una = raw_input("[+] Post ID : ")
+		tez = raw_input("[+] Post ID : ")
 		try:
-			jok=requests.get("https://graph.facebook.com/me/friends?method=post&uids="+una+"&access_token="+toket)
+			jok=requests.get("https://graph.facebook.com/me/friends?method=post&uids="+tez+"&access_token="+toket)
 			op=json.loads(jok.text)
 		except KeyError:
 			print"[!] Friend Not Found"
 			raw_input("Press Enter To Back ")
 			grab()
-		r=requests.get("https://graph.facebook.com/"+una+"/reactions?limit=9999999&access_token="+toket)
+		r=requests.get("https://graph.facebook.com/"+tez+"/reactions?limit=9999999&access_token="+toket)
 		z=json.loads(r.text)
 		jam('[✓] Getting Post Likes Extract IDs...')
 		print"--------------------------------------"
 		bz = open('/sdcard/ids/jam_post.txt','w')
 		for a in z['post']['data']:
-			idh.append(a['id'])
+			id.append(a['id'])
 			bz.write(a['id'] + ' | ' '\n')
 			print ("\r["+str(len(idh))+" ] => "+a['id']),;sys.stdout.flush();time.sleep(0.001)
 		bz.close()

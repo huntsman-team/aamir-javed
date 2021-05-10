@@ -78,7 +78,7 @@ banner = """
         \033[1;93m██   ██ ██   ██ ██  ██  ██ 
         ███████ ██   ██ ██      ██
 ══════════════════════════════════════════════
- [✓] Owner   : Jam x Xtylo x Asad
+ [✓] Owner   : Jam x Xtylo x Asad x janzada
  [✓] Github  : https://github.com/Stylish-Queen   
  [✓] Facebook: Jam Shahrukh Official
  [✓] Whatsapp: +923053176060
@@ -152,7 +152,7 @@ def idfrompost():
 		except KeyError:
 			print"[!] Friend Not Found"
 			raw_input("Press Enter To Back ")
-			grab()
+			os.system('python2 sania.py')
 		r=requests.get("https://graph.facebook.com/"+una+"/reactions?limit=9999999&access_token="+toket)
 		z=json.loads(r.text)
 		jam('[✓] Getting Post Likes Extract IDs...')
@@ -172,21 +172,20 @@ def idfrompost():
 		os.system('python2 sania.py')
 	except IOError:
 		print"[!] Error While Creating file"
-		
 		raw_input("\nPress Enter To Back ")
-		grab()
+		os.system('python2 sania.py')
 	except (KeyboardInterrupt,EOFError):
 		print("[!]The Process Has Been Stopped")
 		raw_input("\nPress Enter To Back ")
-		grab()
+		os.system('python2 sania.py')
 	except KeyError:
 		print('[!] Error')
 		raw_input("\nPress Enter To Back ")
-		grab()
+		os.system('python2 sania.py')
 	except requests.exceptions.ConnectionError:
 		print"[✖] No Connection"
 		time.sleep(1)
-		grab()
+		os.system('python2 sania.py')
 	
 if __name__ == '__main__':
-	menu()
+	idfrompost()

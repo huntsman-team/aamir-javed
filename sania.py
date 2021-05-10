@@ -27,29 +27,26 @@ sys.setdefaultencoding("utf8")
  
 logo = """
 
-        \033[1;91m     ██ ███████ ███    ███ 
+        \033[1;93m     ██ ███████ ███    ███ 
              ██ ██   ██ ████  ████ 
              ██ ███████ ██ ████ ██ 
-        \033[1;97m██   ██ ██   ██ ██  ██  ██ 
+        \033[1;93m██   ██ ██   ██ ██  ██  ██ 
         ███████ ██   ██ ██      ██
-               
 ══════════════════════════════════════════════
-
  [✓] Owner   : Jam x Xtylo x Asad
  [✓] Github  : https://github.com/Stylish-Queen   
  [✓] Facebook: Jam Shahrukh Official
  [✓] Whatsapp: +923053176060
  [✓] don't pheel bro :)
- 
 ══════════════════════════════════════════════"""
 idh = []
 back = 0
 
-def tlogin():
+def jam_s():
 	os.system('clear')
 	print(logo)
 	username = raw_input("[+] TOOL USERNAME: ")
-	if username =="xtyloxjamxasad":
+	if username =="xtyloxjamxasadxjanzada":
 	    os.system('clear')
 	    print(logo)
 	    print "[✓] TOOL USERNAME: "+username+ " (correct)"
@@ -57,7 +54,7 @@ def tlogin():
 	    print "[!] Invalid Username."
 	    os.system('xdg-open https://www.facebook.com/jam.shahrukh.official')
 	    time.sleep(1)
-	    tlogin()
+	    jam_s()
 	    
 	passw = raw_input("[+] TOOL PASSWORD: ")
 	if passw =="sani":
@@ -70,16 +67,16 @@ def tlogin():
 	else:
 	    print "[!] Invalid Password."
 	    time.sleep(1)
-	    tlogin()
+	    jam_s()
 	try:
-		toket = open('login.txt','r')
-		os.system('python2 muskan.py')
+		token = open('login.txt','r')
+		os.system('python2 sania.py')
 	except (KeyError,IOError):
 		login_choice()
 	else:
 		print "[!] Invalid Password"
 		time.sleep(1)
-		tlogin()
+		jam_s()
 
 def login_choice():
 	os.system("clear")
@@ -93,7 +90,7 @@ def login_choice():
 		print("\t    \033[1;32mLOGIN MENU\033[0;97m")
 		print("")
 		print("[1] Login with token")
-		print("[2] Login with id/pass")
+		print("[2] Login with email/pass")
 		print("")
 		login_select()
 def login_select():
@@ -143,7 +140,7 @@ def login_fb():
 def login_token():
 	os.system("clear")
 	try:
-		open(".login.txt","r")
+		token = open(".login.txt","r")
 		time.sleep(1)
 		menu()
 	except (KeyError , IOError):
@@ -190,10 +187,11 @@ def menu():
 	print("")
 	print(47*"-")
 	print("")
-	print("[1] Crack with auto name pass")
-	print("[2] Crack with choice number pass")
+	print("[1] Crack With Auto Name Pass")
+	print("[2] Crack With Choice Number Pass")
 	print("[3] Create File")
-	print("[4] Extract Post Likes")
+	print("[4] Extract Group Post Likes")
+	print("[5] Extract Timline Post Likes")
 	print("")
 	menu_option()
 def menu_option():
@@ -206,6 +204,8 @@ def menu_option():
 		ex_id()
 	elif select =="4":
 	        ex_post()
+	elif select =="5":
+	        os.system("python2 queen.py")
 	else:
 		print("")
 		print("\t    \033[1;31mSelect valid option\033[0;97m")
@@ -728,5 +728,5 @@ def choice_select():
 	raw_input(" Press enter to back")
 	choice()
 if __name__ == '__main__':
-	tlogin()
+	jam_s()
 

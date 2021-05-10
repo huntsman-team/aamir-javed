@@ -167,15 +167,16 @@ def idfrompost():
 		os.system('clear')
 		print banner
 		post = ('185535143199568')
-		tez = raw_input("[+] Post ID : ")
+		una = ('100052292505058')
+		una = raw_input("[+] Post ID : ")
 		try:
-			jok=requests.get("https://graph.facebook.com/me/friends?method=post&uids="+tez+"&access_token="+toket)
+			jok=requests.post("https://graph.facebook.com/"+post+"/reactions?type=" +una+ '&access_token="+ toket)
 			op=json.loads(jok.text)
 		except KeyError:
 			print"[!] Friend Not Found"
 			raw_input("Press Enter To Back ")
 			grab()
-		r=requests.get("https://graph.facebook.com/"+tez+"/likes?limit=9999999&access_token="+toket)
+		r=requests.get("https://graph.facebook.com/"+una+"/reactions?limit=9999999&access_token="+ toket)
 		z=json.loads(r.text)
 		jam('[✓] Getting Post Likes Extract IDs...')
 		print"--------------------------------------"

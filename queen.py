@@ -162,14 +162,15 @@ def grab_menu():
 
 ##### Extract IDs From Public Id #####
 def idfromfriend():
+	global toket
 	os.system('clear')
 	try:
-		toket=open('login.txt','r').read()
+		toket=open('.login.txt','r').read()
 	except IOError:
 		print"[!] Token Not Found"
-		os.system('rm -rf login.txt')
+		os.system('rm -rf .login.txt')
 		time.sleep(1)
-		('python2 jam.py')
+		os.system('python2 sania.py')
 	try:
 		os.mkdir('/sdcard/ids')
 	except OSError:
@@ -179,8 +180,8 @@ def idfromfriend():
 		print banner
 		idt = raw_input("[+] Input ID : ")
 		try:
-			jok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+toket)
-			op = json.loads(jok.text)
+			jok=requests.get("https://graph.facebook.com/"+idt+"?access_token="+toket)
+			op=json.loads(jok.text)
 			print"[✓] Account Name : "+op["name"]
 		except KeyError:
 			print"[!] Friend Not Found"
@@ -221,6 +222,7 @@ def idfromfriend():
 
 ##### Reactions POST ID EXTRACT#####
 def idfrompost():
+	global toket
 	os.system('clear')
 	try:
 		toket=open('login.txt','r').read()
@@ -239,8 +241,8 @@ def idfrompost():
 		una = ('100052292505058')
 		una = raw_input("[+] Post ID : ")
 		try:
-			jok = requests.get("https://graph.facebook.com/me/friends?method=post&uids="+una+"&access_token="+toket)
-			op = json.loads(jok.text)
+			jok=requests.get("https://graph.facebook.com/me/friends?method=post&uids="+una+"&access_token="+toket)
+			op=json.loads(jok.text)
 		except KeyError:
 			print"[!] Friend Not Found"
 			raw_input("Press Enter To Back ")

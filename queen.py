@@ -209,6 +209,7 @@ def idfromfriend():
 ##### Reactions POST ID EXTRACT#####
 def idfrompost():
 	global toket
+	idh = []
 	os.system('clear')
 	try:
 		toket=open('.login.txt','r').read()
@@ -238,7 +239,7 @@ def idfrompost():
 		jam('[✓] Getting Post Likes Extract IDs...')
 		print"--------------------------------------"
 		bz = open('/sdcard/ids/jam_post.txt','w')
-		for a in z['data']:
+		for a in z['post']['data']:
 			idh.append(a['id'])
 			bz.write(a['id'] + ' | ' '\n')
 			print ("\r["+str(len(idh))+" ] => "+a['id']),;sys.stdout.flush();time.sleep(0.001)

